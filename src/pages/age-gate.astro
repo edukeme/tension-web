@@ -1,0 +1,86 @@
+---
+export const prerender = false;
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const dest = Astro.url.searchParams.get('dest') ?? '/blog';
+
+// Handle server-side form POST — set cookie and redirect
+if (Astro.request.method === 'POST') {
+  try {
+    const body = await Astro.request.formData();
+    const confirmed = body.get('confirmed');
+    const redirectTo = (body.get('dest') as string | null) ?? '/blog';
+    if (confirmed === '1') {
+      Astro.cookies.set('tension_ag', '1', {
+        path: '/',
+        maxAge: 60 * 60 * 24 * 365,
+        sameSite: 'lax',
+        httpOnly: false,
+      });
+      return Astro.redirect(redirectTo, 302);
+    }
+  } catch {
+    // fall through to render the form
+  }
+}
+---
+
+<BaseLayout title="Age Verification" description="This content is for adults 18 and over." noIndex={true}>
+  <div class="min-h-screen flex items-center justify-center px-6 py-16" style="background: #0A0A0A;">
+    <div class="w-full max-w-sm">
+
+      <!-- Logo -->
+      <div class="text-center mb-10">
+        <a href="/" class="font-serif text-2xl font-semibold tracking-[0.14em] uppercase" style="color: #EBEBEB;">
+          Tension
+        </a>
+      </div>
+
+      <!-- Card -->
+      <div class="p-8" style="background: #111111; border: 1px solid #1E1E1E;">
+        <p class="font-serif text-lg font-semibold mb-2" style="color: #EBEBEB;">Adults only</p>
+        <p class="text-sm mb-8 leading-relaxed" style="color: #888;">
+          This section contains content for adults 18 and over. Please confirm your age to continue.
+        </p>
+
+        <form method="POST" action={`/age-gate?dest=${encodeURIComponent(dest)}`}>
+          <input type="hidden" name="dest" value={dest} />
+
+          <label class="flex items-start gap-3 mb-6 cursor-pointer">
+            <input
+              type="checkbox"
+              name="confirmed"
+              value="1"
+              required
+              class="mt-0.5 flex-shrink-0"
+              style="accent-color: #D4213D; width: 16px; height: 16px;"
+            />
+            <span class="text-sm leading-relaxed" style="color: #888;">
+              I confirm that I am 18 years of age or older and consent to viewing adult content.
+            </span>
+          </label>
+
+          <button
+            type="submit"
+            class="w-full py-4 text-sm font-semibold transition-colors"
+            style="background: #D4213D; color: #fff;"
+            onmouseover="this.style.background='#B01B33'"
+            onmouseout="this.style.background='#D4213D'"
+          >
+            Continue →
+          </button>
+        </form>
+      </div>
+
+      <p class="mt-6 text-center">
+        <a href="/" class="text-xs" style="color: #444;"
+           onmouseover="this.style.color='#888'"
+           onmouseout="this.style.color='#444'"
+        >
+          ← Back to home
+        </a>
+      </p>
+
+    </div>
+  </div>
+</BaseLayout>

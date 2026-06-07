@@ -1,0 +1,89 @@
+---
+interface Props {
+  productSlug: string;
+  productTitle: string;
+  price?: string;
+}
+
+const { productSlug, productTitle, price } = Astro.props;
+---
+
+<div class="my-10 p-8" style="background: #111111; border: 1px solid #1E1E1E;">
+  {price && (
+    <p class="font-serif text-4xl font-semibold mb-1" style="color: #EBEBEB;">{price}</p>
+  )}
+  <p class="text-sm mb-6" style="color: #888;">
+    Launching soon. Join the waitlist — you'll be first to know and get the early-bird price.
+  </p>
+
+  <form
+    id={`waitlist-form-${productSlug}`}
+    data-product={productSlug}
+    class="w-full max-w-md"
+  >
+    <div class="flex flex-col sm:flex-row gap-0">
+      <input
+        type="email"
+        name="email"
+        required
+        placeholder="your@email.com"
+        class="flex-1 px-4 py-3.5 text-sm outline-none"
+        style="background: #1A1A1A; border: 1px solid #2A2A2A; border-right: none; color: #EBEBEB;"
+        onfocus="this.style.borderColor='#D4213D'"
+        onblur="this.style.borderColor='#2A2A2A'"
+      />
+      <button
+        type="submit"
+        class="px-6 py-3.5 text-sm font-semibold whitespace-nowrap transition-colors"
+        style="background: #D4213D; color: #fff; border: 1px solid #D4213D;"
+        onmouseover="this.style.background='#B01B33'"
+        onmouseout="this.style.background='#D4213D'"
+      >
+        Notify me →
+      </button>
+    </div>
+    <p class="form-msg text-xs mt-2 hidden" style="color: #D4213D;"></p>
+  </form>
+</div>
+
+<script>
+document.querySelectorAll<HTMLFormElement>('form[data-product]').forEach((form) => {
+  const productSlug = form.dataset.product ?? '';
+  const msgEl = form.querySelector<HTMLParagraphElement>('.form-msg');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = (form.elements.namedItem('email') as HTMLInputElement).value;
+    const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    btn.disabled = true;
+    btn.textContent = 'Adding you…';
+
+    try {
+      const res = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, product_slug: productSlug }),
+      });
+      const data = await res.json() as { ok: boolean; error?: string };
+
+      if (data.ok) {
+        form.innerHTML = '<p class="text-sm font-semibold" style="color: #D4213D;">You\'re on the list. We\'ll email when it launches.</p>';
+      } else {
+        if (msgEl) {
+          msgEl.textContent = data.error ?? 'Something went wrong.';
+          msgEl.classList.remove('hidden');
+        }
+        btn.disabled = false;
+        btn.textContent = 'Notify me →';
+      }
+    } catch {
+      if (msgEl) {
+        msgEl.textContent = 'Network error. Please try again.';
+        msgEl.classList.remove('hidden');
+      }
+      btn.disabled = false;
+      btn.textContent = 'Notify me →';
+    }
+  });
+});
+</script>

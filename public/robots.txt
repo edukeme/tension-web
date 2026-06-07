@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /api/
+Disallow: /age-gate
+
+Sitemap: https://tension.app/sitemap-index.xml

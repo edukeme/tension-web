@@ -1,0 +1,73 @@
+---
+interface Props {
+  headline: string;
+  subhead: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+}
+
+const {
+  headline,
+  subhead,
+  ctaLabel = 'Get the Free Checklist',
+  ctaHref = '/free-checklist',
+  secondaryLabel,
+  secondaryHref,
+} = Astro.props;
+---
+
+<section class="relative min-h-[90vh] flex items-center justify-center pt-24 pb-16 px-6 overflow-hidden bg-[#0A0A0A]">
+  <!-- Hero Background Image with Blur/Gradient overlay -->
+  <div class="absolute inset-0 z-0">
+    <img src="/images/tension_hero_bg.png" alt="Tension abstract background" class="w-full h-full object-cover opacity-60 mix-blend-screen scale-105" style="filter: blur(6px); transform: scale(1.05);" />
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/30 via-[#0A0A0A]/70 to-[#0A0A0A]"></div>
+  </div>
+
+  <div class="max-w-5xl mx-auto relative z-10 w-full text-center flex flex-col items-center">
+    <!-- Red accent label -->
+    <div class="flex items-center gap-4 mb-8 opacity-90">
+      <span class="block w-12 h-px bg-gradient-to-r from-transparent to-[#D4213D]"></span>
+      <span class="text-xs font-semibold tracking-[0.25em] uppercase text-[#D4213D]">
+        Tension
+      </span>
+      <span class="block w-12 h-px bg-gradient-to-l from-transparent to-[#D4213D]"></span>
+    </div>
+
+    <!-- Headline -->
+    <h1 class="font-serif font-medium leading-[0.95] mb-8 text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#888888]"
+        style="font-size: clamp(3.5rem, 10vw, 7rem); letter-spacing: -0.04em; max-width: 12ch;">
+      {headline}
+    </h1>
+
+    <!-- Subhead -->
+    <p class="text-lg md:text-xl leading-relaxed mb-12 text-[#999] font-light max-w-[48ch]">
+      {subhead}
+    </p>
+
+    <!-- CTAs -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+      <a
+        href={ctaHref}
+        class="inline-flex items-center justify-center gap-2 px-10 py-4 text-sm font-medium rounded-full transition-all duration-300"
+        style="background: rgba(255, 255, 255, 0.95); color: #000; box-shadow: 0 0 20px rgba(255,255,255,0.05);"
+        onmouseover="this.style.background='#fff'; this.style.transform='scale(1.02)'; this.style.boxShadow='0 0 30px rgba(255,255,255,0.15)'"
+        onmouseout="this.style.background='rgba(255, 255, 255, 0.95)'; this.style.transform='scale(1)'; this.style.boxShadow='0 0 20px rgba(255,255,255,0.05)'"
+      >
+        {ctaLabel}
+      </a>
+      {secondaryLabel && secondaryHref && (
+        <a
+          href={secondaryHref}
+          class="inline-flex items-center gap-2 px-8 py-4 text-sm font-medium rounded-full transition-all duration-300 backdrop-blur-md"
+          style="border: 1px solid rgba(255,255,255,0.15); color: #ccc; background: rgba(0,0,0,0.4);"
+          onmouseover="this.style.borderColor='rgba(255,255,255,0.4)'; this.style.color='#fff'; this.style.background='rgba(255,255,255,0.1)'"
+          onmouseout="this.style.borderColor='rgba(255,255,255,0.15)'; this.style.color='#ccc'; this.style.background='rgba(0,0,0,0.4)'"
+        >
+          {secondaryLabel}
+        </a>
+      )}
+    </div>
+  </div>
+</section>

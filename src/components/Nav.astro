@@ -1,0 +1,37 @@
+---
+const links = [
+  { href: '/blog', label: 'Blog' },
+  { href: '/free-checklist', label: 'Free Checklist' },
+];
+---
+
+<header style="background: #0A0A0A; border-bottom: 1px solid #1E1E1E;">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="/" class="font-serif text-lg font-semibold tracking-[0.12em] uppercase" style="color: #EBEBEB; letter-spacing: 0.12em;">
+      Tension
+    </a>
+
+    <div class="flex items-center gap-8">
+      {links.map(link => (
+        <a
+          href={link.href}
+          class="text-sm font-medium transition-colors hidden sm:block"
+          style="color: #888;"
+          onmouseover="this.style.color='#EBEBEB'"
+          onmouseout="this.style.color='#888'"
+        >
+          {link.label}
+        </a>
+      ))}
+      <a
+        href="/bundle"
+        class="text-sm font-semibold px-5 py-2 transition-colors"
+        style="background: #D4213D; color: #fff;"
+        onmouseover="this.style.background='#B01B33'"
+        onmouseout="this.style.background='#D4213D'"
+      >
+        Get the Bundle
+      </a>
+    </div>
+  </nav>
+</header>

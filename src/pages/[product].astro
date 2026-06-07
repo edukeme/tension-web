@@ -1,0 +1,35 @@
+---
+import SalesPageLayout from '@/layouts/SalesPageLayout.astro';
+import SalesPageTemplate from '@/components/SalesPageTemplate.astro';
+import { getCollection } from 'astro:content';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const products = await getCollection('products');
+  // free-checklist has its own page
+  return products
+    .filter((p) => p.data.slug !== 'free-checklist')
+    .map((p) => ({ params: { product: p.data.slug }, props: { product: p } }));
+}
+
+const { product } = Astro.props;
+const d = product.data;
+---
+
+<SalesPageLayout title={d.title} description={d.meta_description}>
+  <SalesPageTemplate
+    h1={d.h1}
+    subhead={d.subhead}
+    problem={d.problem}
+    inside={d.inside}
+    whoFor={d.who_for}
+    whoNot={d.who_not}
+    ctaLabel={d.cta_label}
+    price={d.price_eur}
+    status={d.status}
+    faq={d.faq}
+    slug={d.slug}
+    title={d.title}
+  />
+</SalesPageLayout>

@@ -1,0 +1,197 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/Hero.astro';
+import ProductCard from '@/components/ProductCard.astro';
+import EmailCaptureForm from '@/components/EmailCaptureForm.astro';
+import { getCollection } from 'astro:content';
+
+const allProducts = await getCollection('products');
+const ORDER = ['bundle', '21-scenes', 'brat-playbook', 'verbal-arsenal', 'negotiation-workbook', 'erotic-tales', 'free-checklist'];
+const products = ORDER.map(slug => allProducts.find(p => p.data.slug === slug)).filter(Boolean);
+---
+
+<BaseLayout
+  title="Intentional Intimacy Coaching for Couples"
+  description="Tension is private coaching for couples exploring power dynamics and intentional intimacy. Resources, guides, and tools designed for the relationship behind closed doors."
+>
+  <Hero
+    headline="Intimacy, by design."
+    subhead="Coaching for the relationship behind closed doors — the trust, the communication, the structure that makes intentional intimacy work."
+    ctaLabel="Get the Free Couples Checklist"
+    ctaHref="/free-checklist"
+    secondaryLabel="See all resources"
+    secondaryHref="#products"
+  />
+
+  <!-- Value props (Bento Grid Style) -->
+  <section class="py-24 px-6 relative overflow-hidden" style="background: #050505;">
+    <!-- Abstract subtle glow behind value props -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] opacity-20 pointer-events-none blur-[120px] rounded-full" style="background: radial-gradient(circle, #D4213D 0%, transparent 70%);"></div>
+
+    <div class="max-w-5xl mx-auto relative z-10">
+      <div class="text-center mb-16">
+        <h2 class="font-serif font-medium text-3xl md:text-5xl text-white mb-6">Designed for privacy. Built for connection.</h2>
+        <p class="text-[#888] max-w-2xl mx-auto text-lg">A modern framework for power dynamics that respects the depth of the relationship behind it.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        {[
+          { num: '01', title: 'Structure', body: 'Frameworks and blueprints that turn intention into actual practice. Real dialogue, real steps.' },
+          { num: '02', title: 'Private', body: 'Everything is for you and your partner. No public profiles. No leaderboards. No one needs to know.' },
+          { num: '03', title: 'Grounded', body: 'Every resource is built on consent, safety, and emotional intelligence — not just heat.' },
+        ].map(({ num, title, body }) => (
+          <div class="p-8 rounded-3xl transition-transform hover:-translate-y-2 duration-500" style="background: rgba(20,20,20,0.6); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.05); box-shadow: inset 0 0 20px rgba(255,255,255,0.02);">
+            <p class="font-serif font-medium mb-6 text-4xl" style="color: rgba(255,255,255,0.1);">{num}</p>
+            <h3 class="font-serif text-xl font-medium mb-3 text-white">{title}</h3>
+            <p class="text-[#999] leading-relaxed font-light">{body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Products grid -->
+  <section id="products" class="py-24 px-6 relative" style="background: #000;">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+        <div class="max-w-2xl">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="block w-8 h-px" style="background: #D4213D;"></span>
+            <span class="text-xs font-semibold tracking-[0.2em] uppercase text-[#D4213D]">Resources</span>
+          </div>
+          <h2 class="font-serif font-medium leading-tight mb-4 text-white" style="font-size: clamp(2rem, 5vw, 3.5rem); letter-spacing: -0.02em;">
+            For the dynamic you're building
+          </h2>
+          <p class="text-lg text-[#888] font-light">
+            Written by Mr. D from the perspective of someone who has actually done this.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Feature Bundle with Generated Image -->
+      <div class="mb-6 rounded-3xl overflow-hidden relative group" style="background: #111; border: 1px solid rgba(255,255,255,0.05);">
+        <div class="absolute inset-0 z-0">
+          <img src="/images/tension_products.png" alt="Tension Products Collection" class="w-full h-full object-cover opacity-40 mix-blend-lighten group-hover:opacity-50 transition-opacity duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-r from-[#000] via-[#000]/80 to-transparent"></div>
+        </div>
+        <div class="relative z-10 p-10 md:p-16 max-w-xl">
+          <span class="inline-block font-semibold px-4 py-1.5 mb-6 tracking-[0.2em] uppercase rounded-full" style="background: rgba(212,33,61,0.2); color: #fff; font-size: 10px; border: 1px solid rgba(212,33,61,0.4);">
+            The Complete Collection
+          </span>
+          <h3 class="text-3xl md:text-4xl font-serif font-medium text-white mb-4">The D/s Mastery Bundle</h3>
+          <p class="text-[#999] mb-8 text-lg font-light leading-relaxed">Everything in one place. All 5 PDFs, the audio stories, exclusive bonus material, and early app access. The entire foundation for a dynamic that works.</p>
+          <a href="/bundle" class="inline-flex items-center gap-2 px-8 py-3 text-sm font-medium rounded-full bg-white text-black hover:bg-gray-200 transition-colors">
+            Get the Bundle →
+          </a>
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {products.filter(p => p?.data.slug !== 'bundle').map((p) => (
+          p && (
+            <ProductCard
+              title={p.data.title}
+              slug={p.data.slug}
+              price={p.data.price_eur}
+              tagline={p.data.tagline}
+              isFree={p.data.price_eur === null}
+              isBundle={false}
+            />
+          )
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Lead magnet -->
+  <section class="py-32 px-6 relative overflow-hidden" style="background: #0A0A0A;">
+    <!-- Abstract blurred orb -->
+    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-[#D4213D] opacity-5 rounded-full blur-[150px] translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
+
+    <div class="max-w-5xl mx-auto relative z-10">
+      <div class="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+        <div>
+          <div class="flex items-center gap-3 mb-8">
+            <span class="block w-8 h-px bg-[#D4213D]"></span>
+            <span class="text-xs font-semibold tracking-[0.2em] uppercase text-[#D4213D]">Free Tool</span>
+          </div>
+          <h2 class="font-serif font-medium mb-6 text-white leading-tight" style="font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.02em;">
+            Start here: <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-[#888]">The Couples Checklist</span>
+          </h2>
+          <p class="text-lg leading-relaxed mb-10 font-light text-[#888] max-w-md">
+            90 activities, 7 categories, 5 response options. The conversation most couples never have — structured and made easier.
+          </p>
+          <div class="flex flex-col gap-4 mb-10">
+            {['90 activities across 7 categories', 'Done together, not separately', 'Free. Yours in 90 seconds.'].map(item => (
+              <div class="flex items-center gap-4 text-[15px] font-light text-[#AAA]">
+                <div class="w-1.5 h-1.5 rounded-full bg-[#D4213D]"></div>
+                {item}
+              </div>
+            ))}
+          </div>
+          <EmailCaptureForm />
+          <p class="text-xs mt-6 text-[#555] font-light">No spam. Unsubscribe any time.</p>
+        </div>
+        <div class="hidden md:flex justify-end relative">
+          <div class="w-full max-w-[380px] aspect-[4/5] rounded-3xl relative overflow-hidden flex flex-col justify-between p-10" style="background: linear-gradient(180deg, #1A1A1A 0%, #0F0F0F 100%); border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 40px 80px rgba(0,0,0,0.5);">
+            <div class="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none"></div>
+            
+            <div class="relative z-10">
+              <p class="font-serif text-7xl font-medium mb-1 text-white">90</p>
+              <p class="text-xs tracking-[0.2em] uppercase text-[#666]">Activities</p>
+            </div>
+            
+            <div class="w-full h-px bg-white/5 relative z-10 my-8"></div>
+            
+            <div class="relative z-10">
+              <p class="font-serif text-5xl font-medium mb-1 text-white">7</p>
+              <p class="text-xs tracking-[0.2em] uppercase text-[#666]">Categories</p>
+            </div>
+            
+            <div class="w-full h-px bg-white/5 relative z-10 my-8"></div>
+            
+            <div class="relative z-10">
+              <p class="font-serif text-5xl font-medium mb-1 text-[#D4213D]">5</p>
+              <p class="text-xs tracking-[0.2em] uppercase text-[#666]">Response options</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog teaser with Generated Images -->
+  <section class="py-24 px-6 relative" style="background: #050505; border-top: 1px solid rgba(255,255,255,0.02);">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-16">
+        <div>
+          <h2 class="font-serif text-3xl md:text-4xl font-medium mb-3 text-white">From the journal</h2>
+          <p class="text-lg text-[#888] font-light">Plain-language guides on power dynamics, scenes, and intentional intimacy.</p>
+        </div>
+        <a href="/blog" class="inline-flex items-center gap-2 text-sm font-semibold tracking-wide uppercase transition-colors text-[#D4213D] hover:text-white">
+          Read all entries →
+        </a>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <a href="/blog" class="group rounded-3xl overflow-hidden relative aspect-[16/10] block">
+          <img src="/images/tension_blog_1.png" alt="Blog entry" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-8">
+            <span class="text-xs font-semibold tracking-[0.2em] uppercase text-[#D4213D] mb-3 block">Perspective</span>
+            <h3 class="font-serif text-2xl font-medium text-white">The Psychology of the Chain</h3>
+          </div>
+        </a>
+        <a href="/blog" class="group rounded-3xl overflow-hidden relative aspect-[16/10] block">
+          <img src="/images/tension_blog_2.png" alt="Blog entry" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-8">
+            <span class="text-xs font-semibold tracking-[0.2em] uppercase text-[#D4213D] mb-3 block">Dynamics</span>
+            <h3 class="font-serif text-2xl font-medium text-white">Creating Space for Surrender</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

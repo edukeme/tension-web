@@ -1,0 +1,59 @@
+---
+interface Props {
+  product?: string;
+  label?: string;
+  href?: string;
+  note?: string;
+  variant?: 'default' | 'inline';
+}
+
+const {
+  product,
+  label,
+  href,
+  note,
+  variant = 'default',
+} = Astro.props;
+
+const PRODUCT_MAP: Record<string, { label: string; href: string }> = {
+  'free-checklist':       { label: 'Get the Free Couples Checklist →', href: '/free-checklist' },
+  '21-scenes':            { label: 'Get 21 Scenes →', href: '/21-scenes' },
+  'brat-playbook':        { label: 'Get the Brat Playbook →', href: '/brat-playbook' },
+  'verbal-arsenal':       { label: 'Get the Verbal Arsenal →', href: '/verbal-arsenal' },
+  'negotiation-workbook': { label: 'Get the Negotiation Workbook →', href: '/negotiation-workbook' },
+  'erotic-tales':         { label: 'Get the 10 Erotic Tales →', href: '/erotic-tales' },
+  'bundle':               { label: 'Get the D/s Mastery Collection →', href: '/bundle' },
+};
+
+const resolved = product
+  ? (PRODUCT_MAP[product] ?? { label: label ?? 'Learn more →', href: href ?? '/' })
+  : { label: label ?? 'Learn more →', href: href ?? '/' };
+---
+
+{variant === 'inline' ? (
+  <div class="my-8 p-5" style="border-left: 2px solid #D4213D; background: #111111;">
+    <a
+      href={resolved.href}
+      class="font-semibold text-sm transition-colors"
+      style="color: #D4213D;"
+      onmouseover="this.style.color='#F03050'"
+      onmouseout="this.style.color='#D4213D'"
+    >
+      {resolved.label}
+    </a>
+    {note && <p class="text-sm mt-1" style="color: #888;">{note}</p>}
+  </div>
+) : (
+  <div class="my-12 py-10 px-8 text-center" style="background: #111111; border: 1px solid #1E1E1E;">
+    <a
+      href={resolved.href}
+      class="inline-block px-8 py-4 text-sm font-semibold transition-colors"
+      style="background: #D4213D; color: #fff;"
+      onmouseover="this.style.background='#B01B33'"
+      onmouseout="this.style.background='#D4213D'"
+    >
+      {resolved.label}
+    </a>
+    {note && <p class="text-sm mt-4" style="color: #888;">{note}</p>}
+  </div>
+)}

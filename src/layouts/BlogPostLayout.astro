@@ -1,0 +1,188 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { buildTitle, SITE_URL } from '@/lib/seo';
+import FAQ from '@/components/FAQ.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  date: Date;
+  updated?: Date;
+  author?: string;
+  primaryKeyword?: string;
+  slug: string;
+  faq?: Array<{ q: string; a: string }>;
+  category?: string;
+  wordcount?: number;
+}
+
+const {
+  title,
+  description,
+  date,
+  updated,
+  author = 'Mr. D',
+  slug,
+  faq,
+  category,
+  primaryKeyword,
+  wordcount,
+} = Astro.props;
+
+const canonical = `${SITE_URL}/blog/${slug}/`;
+const publishedISO = date.toISOString();
+const updatedISO = (updated ?? date).toISOString();
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  author: { '@type': 'Person', name: author },
+  publisher: { '@type': 'Organization', name: 'Tension' },
+  datePublished: publishedISO,
+  dateModified: updatedISO,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  url: canonical,
+};
+
+const formattedDate = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+const readTime = Math.ceil((wordcount || 1500) / 200);
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+
+  <!-- Post hero strip (Large banner with background couple image) -->
+  <div class="relative w-full py-24 md:py-32 px-6 flex items-center bg-[#0A0A0A] overflow-hidden border-b border-white/5">
+    
+    <!-- Filtered Background Image Layer -->
+    <div 
+      class="absolute inset-0 w-full h-full z-0"
+      style={`
+        background-image: linear-gradient(to right, rgba(10, 10, 12, 0.95) 30%, rgba(10, 10, 12, 0.4) 100%), url('/images/blog_${slug}.png'); 
+        background-size: cover; 
+        background-position: center;
+        filter: grayscale(100%) sepia(100%) hue-rotate(345deg) saturate(2.5) contrast(1.5) brightness(0.65);
+      `}
+    ></div>
+
+    <div class="max-w-4xl mx-auto w-full relative z-10">
+      <!-- Back to blog -->
+      <a href="/blog" class="inline-flex items-center gap-1.5 text-xs font-semibold tracking-widest text-gray-300 hover:text-white transition-colors uppercase mb-8">
+        ← Blog
+      </a>
+
+      <!-- Tags / Pills -->
+      <div class="flex flex-wrap gap-2.5 mb-6">
+        {category && (
+          <span class="px-3.5 py-1 text-[10px] font-bold tracking-widest uppercase rounded-full bg-blue-600/20 text-blue-400 border border-blue-500/20">
+            {category}
+          </span>
+        )}
+        {primaryKeyword && (
+          <span class="px-3.5 py-1 text-[10px] font-bold tracking-widest uppercase rounded-full bg-red-600/20 text-red-400 border border-red-500/20">
+            {primaryKeyword}
+          </span>
+        )}
+      </div>
+
+      <!-- Title -->
+      <h1 class="font-serif font-medium leading-tight mb-8 text-white" style="font-size: clamp(2rem, 5vw, 3.5rem); letter-spacing: -0.02em; max-width: 25ch;">
+        {title}
+      </h1>
+
+      <!-- Meta Info Line with Icons -->
+      <div class="flex flex-wrap items-center gap-6 text-xs text-gray-400 font-medium">
+        <span class="flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+          </svg>
+          {author}
+        </span>
+        <span class="flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+          {formattedDate}
+        </span>
+        <span class="flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          {readTime} min read
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Post body (Dark background) -->
+  <article class="bg-[#0A0A0A]">
+    <div class="max-w-2xl mx-auto px-6 py-16">
+      <!-- Table of Contents -->
+      <nav id="toc" class="mb-12 pl-6 py-1 border-l-2 border-blue-500">
+        <h2 class="text-[10px] font-bold tracking-[0.25em] uppercase text-gray-500 mb-4">Neste Artigo</h2>
+        <ol id="toc-list" class="space-y-3 text-sm font-medium text-blue-400 list-decimal pl-4">
+          <!-- Filled by JavaScript -->
+        </ol>
+      </nav>
+
+      <div class="prose">
+        <slot />
+      </div>
+
+      <!-- FAQ Section -->
+      {faq && faq.length > 0 && (
+        <div class="mt-16 pt-12 border-t border-[#1E1E1E]">
+          <FAQ items={faq} />
+        </div>
+      )}
+    </div>
+  </article>
+
+</BaseLayout>
+
+<script>
+  // Generate Table of Contents from headings
+  const tocList = document.getElementById('toc-list');
+  const proseDiv = document.querySelector('.prose');
+
+  if (tocList && proseDiv) {
+    const headings = proseDiv.querySelectorAll('h2, h3');
+    const items: { id: string; text: string; level: number }[] = [];
+
+    headings.forEach((heading, index) => {
+      if (!heading.id) {
+        heading.id = `heading-${index}`;
+      }
+
+      items.push({
+        id: heading.id,
+        text: heading.textContent || '',
+        level: parseInt(heading.tagName[1]),
+      });
+    });
+
+    // Create TOC links
+    tocList.innerHTML = items
+      .map(item => {
+        const indent = item.level === 3 ? 'pl-4 list-none' : '';
+        return `
+          <li class="${indent}">
+            <a href="#${item.id}" class="text-blue-400 hover:text-blue-300 hover:underline transition-colors duration-200">
+              ${item.text}
+            </a>
+          </li>
+        `;
+      })
+      .join('');
+
+    // Hide TOC if no headings
+    if (items.length === 0) {
+      const tocNav = document.getElementById('toc');
+      if (tocNav) tocNav.style.display = 'none';
+    }
+  }
+</script>

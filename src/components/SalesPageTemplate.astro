@@ -1,0 +1,93 @@
+---
+import FAQ from './FAQ.astro';
+import WaitlistForm from './WaitlistForm.astro';
+
+interface FaqItem { q: string; a: string; }
+
+interface Props {
+  h1: string;
+  subhead: string;
+  problem: string;
+  inside: string[];
+  whoFor: string[];
+  whoNot: string[];
+  ctaLabel: string;
+  price?: number | null;
+  status: 'live' | 'waitlist';
+  faq: FaqItem[];
+  slug: string;
+  title: string;
+}
+
+const {
+  h1, subhead, problem, inside, whoFor, whoNot,
+  ctaLabel, price, status, faq, slug, title,
+} = Astro.props;
+
+const displayPrice = price ? `€${price.toFixed(2)}` : null;
+---
+
+<article>
+
+  <!-- Eyebrow + headline -->
+  <div class="flex items-center gap-3 mb-6">
+    <span class="block w-6 h-px" style="background: #D4213D;"></span>
+    <span class="text-xs font-semibold tracking-widest uppercase" style="color: #D4213D; letter-spacing: 0.18em;">Tension</span>
+  </div>
+
+  <h1 class="font-serif font-semibold leading-[1.05] mb-5"
+      style="color: #EBEBEB; font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -0.02em;">
+    {h1}
+  </h1>
+  <p class="text-lg leading-relaxed mb-12" style="color: #888; max-width: 52ch;">{subhead}</p>
+
+  <!-- Problem -->
+  <section class="mb-12">
+    <h2 class="font-serif text-base font-semibold mb-4 uppercase tracking-widest" style="color: #444; letter-spacing: 0.14em; font-size: 11px;">The problem</h2>
+    <p class="text-base leading-relaxed whitespace-pre-line" style="color: #B8B8B8;">{problem}</p>
+  </section>
+
+  <!-- What's inside -->
+  <section class="mb-12">
+    <h2 class="font-serif text-base font-semibold mb-6 uppercase tracking-widest" style="color: #444; letter-spacing: 0.14em; font-size: 11px;">What's inside</h2>
+    <ul class="space-y-3">
+      {inside.map((item) => (
+        <li class="flex gap-4 text-sm" style="color: #B8B8B8;">
+          <span class="flex-shrink-0 mt-0.5" style="color: #D4213D;">—</span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- Who it's for / not for -->
+  <div class="grid md:grid-cols-2 gap-px mb-12" style="background: #1E1E1E;">
+    <section class="p-6" style="background: #0F0F0F;">
+      <h2 class="text-xs font-semibold mb-5 uppercase tracking-widest" style="color: #444; letter-spacing: 0.14em;">Who this is for</h2>
+      <ul class="space-y-3">
+        {whoFor.map((item) => (
+          <li class="flex gap-3 text-sm">
+            <span class="flex-shrink-0" style="color: #D4213D;">✓</span>
+            <span style="color: #B8B8B8;">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+    <section class="p-6" style="background: #0F0F0F;">
+      <h2 class="text-xs font-semibold mb-5 uppercase tracking-widest" style="color: #444; letter-spacing: 0.14em;">Who this is NOT for</h2>
+      <ul class="space-y-3">
+        {whoNot.map((item) => (
+          <li class="flex gap-3 text-sm">
+            <span class="flex-shrink-0" style="color: #444;">×</span>
+            <span style="color: #888;">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </div>
+
+  <WaitlistForm productSlug={slug} productTitle={title} price={displayPrice ?? undefined} />
+
+  <FAQ items={faq} />
+
+</article>

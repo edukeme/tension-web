@@ -1,0 +1,76 @@
+---
+interface Props {
+  buttonLabel?: string;
+  placeholder?: string;
+}
+
+const {
+  buttonLabel = 'Get the Free Checklist →',
+  placeholder = 'your@email.com',
+} = Astro.props;
+---
+
+<form id="email-capture-form" class="w-full max-w-md" data-form="subscribe">
+  <div class="flex flex-col sm:flex-row gap-0">
+    <input
+      type="email"
+      name="email"
+      required
+      placeholder={placeholder}
+      class="flex-1 px-4 py-3.5 text-sm outline-none"
+      style="background: #1A1A1A; border: 1px solid #2A2A2A; border-right: none; color: #EBEBEB;"
+      onfocus="this.style.borderColor='#D4213D'"
+      onblur="this.style.borderColor='#2A2A2A'"
+    />
+    <button
+      type="submit"
+      class="px-6 py-3.5 text-sm font-semibold whitespace-nowrap transition-colors"
+      style="background: #D4213D; color: #fff; border: 1px solid #D4213D;"
+      onmouseover="this.style.background='#B01B33'; this.style.borderColor='#B01B33'"
+      onmouseout="this.style.background='#D4213D'; this.style.borderColor='#D4213D'"
+    >
+      {buttonLabel}
+    </button>
+  </div>
+  <p id="email-form-msg" class="text-xs mt-2 hidden" style="color: #D4213D;"></p>
+</form>
+
+<script>
+const form = document.getElementById('email-capture-form') as HTMLFormElement | null;
+const msg = document.getElementById('email-form-msg') as HTMLParagraphElement | null;
+
+form?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const email = (form.elements.namedItem('email') as HTMLInputElement).value;
+  const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  try {
+    const res = await fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
+    const data = await res.json() as { ok: boolean; error?: string };
+
+    if (data.ok) {
+      form.innerHTML = '<p class="text-sm font-semibold" style="color: #D4213D;">Check your inbox — your checklist is on its way.</p>';
+    } else {
+      if (msg) {
+        msg.textContent = data.error ?? 'Something went wrong. Try again.';
+        msg.classList.remove('hidden');
+      }
+      btn.disabled = false;
+      btn.textContent = 'Get the Free Checklist →';
+    }
+  } catch {
+    if (msg) {
+      msg.textContent = 'Network error. Please try again.';
+      msg.classList.remove('hidden');
+    }
+    btn.disabled = false;
+    btn.textContent = 'Get the Free Checklist →';
+  }
+});
+</script>

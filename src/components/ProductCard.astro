@@ -1,0 +1,53 @@
+---
+interface Props {
+  title: string;
+  slug: string;
+  price: number | null;
+  tagline: string;
+  isFree?: boolean;
+  isBundle?: boolean;
+}
+
+const { title, slug, price, tagline, isFree = false, isBundle = false } = Astro.props;
+
+const displayPrice = isFree ? 'Free' : price ? `€${price.toFixed(2)}` : '€—';
+const href = isFree ? '/free-checklist' : `/${slug}`;
+---
+
+<a
+  href={href}
+  class="block p-8 transition-all duration-300 group relative overflow-hidden rounded-2xl"
+  style="background: #1C1C1E; border: 1px solid rgba(255,255,255,0.08);"
+  onmouseover="this.style.background='#2C2C2E'; this.style.borderColor='rgba(212,33,61,0.6)'; this.style.transform='translateY(-4px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.5), 0 0 20px rgba(212,33,61,0.15)'"
+  onmouseout="this.style.background='#1C1C1E'; this.style.borderColor='rgba(255,255,255,0.08)'; this.style.transform='translateY(0)'; this.style.boxShadow='none'"
+>
+  <!-- Hover gradient glow -->
+  <div class="absolute -inset-full z-0 block w-[200%] h-[200%] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" style="background: radial-gradient(circle, rgba(212,33,61,0.12) 0%, transparent 60%); top: -50%; left: -50%;"></div>
+
+  <div class="relative z-10 flex flex-col h-full">
+    {isBundle && (
+      <div class="mb-4">
+        <span class="inline-block font-semibold px-3 py-1 tracking-[0.2em] uppercase rounded-full" style="background: rgba(212,33,61,0.15); color: #D4213D; font-size: 9px; border: 1px solid rgba(212,33,61,0.35);">
+          Best Value
+        </span>
+      </div>
+    )}
+
+    <h3 class="text-xl font-serif font-medium mb-3 leading-tight text-[#EBEBEB] group-hover:text-white transition-colors duration-300">
+      {title}
+    </h3>
+
+    <p class="text-sm mb-8 leading-relaxed text-[#999] group-hover:text-[#CCC] transition-colors duration-300 flex-grow">
+      {tagline}
+    </p>
+
+    <div class="flex items-center justify-between mt-auto pt-4" style="border-top: 1px solid rgba(255,255,255,0.06);">
+      <p class="text-sm font-semibold tracking-wide" style="color: #D4213D;">
+        {displayPrice}
+      </p>
+      <span class="text-[#D4213D] opacity-0 group-hover:opacity-100 transform translate-x-[-10px] group-hover:translate-x-0 transition-all duration-300">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </span>
+    </div>
+  </div>
+</a>

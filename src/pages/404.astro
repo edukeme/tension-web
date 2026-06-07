@@ -1,0 +1,22 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Page Not Found" description="This page doesn't exist." noIndex={true}>
+  <div class="min-h-96 flex items-center justify-center px-6 py-24" style="background: #0A0A0A;">
+    <div class="text-center">
+      <p class="font-serif font-semibold mb-4" style="color: #1E1E1E; font-size: 7rem; line-height: 1;">404</p>
+      <h1 class="font-serif text-2xl font-semibold mb-3" style="color: #EBEBEB;">This page doesn't exist.</h1>
+      <p class="mb-8 text-sm" style="color: #888;">It may have moved, or you may have followed a bad link.</p>
+      <a
+        href="/"
+        class="text-sm font-semibold transition-colors"
+        style="color: #D4213D;"
+        onmouseover="this.style.color='#F03050'"
+        onmouseout="this.style.color='#D4213D'"
+      >
+        ← Back to Tension
+      </a>
+    </div>
+  </div>
+</BaseLayout>

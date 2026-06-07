@@ -1,0 +1,74 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import EmailCaptureForm from '@/components/EmailCaptureForm.astro';
+import FAQ from '@/components/FAQ.astro';
+
+const faq = [
+  { q: "Is this actually free or is there a catch?", a: "It's free. You get the checklist. You get a few follow-up emails from Mr. D with genuinely useful stuff. There are products you can buy if you want them. There's no pressure, no automatic charge." },
+  { q: "What if my partner doesn't want to do this?", a: "The checklist is designed to be low-stakes. It's not 'let's have an intense conversation about our sexuality.' It's 'let's look at a list together.' Most partners who are curious but hesitant will go through a checklist. Start there." },
+  { q: "Is this safe to receive on my regular email?", a: "Subject lines are low-key. Nothing that would alarm anyone who glimpsed your inbox. The checklist itself is a PDF — it looks like a document." },
+];
+---
+
+<BaseLayout
+  title="Free Couples Kink Discovery Checklist"
+  description="90 activities, 7 categories, 5 response options. Done together — not separately. The conversation most couples never have, made easier. Free in 90 seconds."
+>
+
+  <!-- Hero -->
+  <div style="background: linear-gradient(160deg, #110608 0%, #0A0A0A 70%); border-bottom: 1px solid #1E1E1E;">
+    <div class="max-w-5xl mx-auto px-6 py-24">
+      <div class="max-w-xl">
+        <div class="flex items-center gap-3 mb-8">
+          <span class="block w-6 h-px" style="background: #D4213D;"></span>
+          <span class="text-xs font-semibold tracking-widest uppercase" style="color: #D4213D; letter-spacing: 0.18em;">Free Resource</span>
+        </div>
+        <h1 class="font-serif font-semibold leading-[1.05] mb-6"
+            style="color: #EBEBEB; font-size: clamp(2rem, 5vw, 3.2rem); letter-spacing: -0.02em;">
+          The Couples Kink Discovery Checklist
+        </h1>
+        <p class="text-base leading-relaxed mb-10" style="color: #888; max-width: 44ch;">
+          90 activities. 7 categories. 5 response options per activity — not just yes/no. Done together, in real time. The conversation that changes what comes next.
+        </p>
+        <EmailCaptureForm buttonLabel="Send me the checklist →" />
+        <p class="text-xs mt-4" style="color: #444;">Delivered instantly. No spam. Unsubscribe any time.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div style="background: #0A0A0A;">
+    <div class="max-w-5xl mx-auto px-6 py-12">
+      <div class="grid md:grid-cols-3 gap-px" style="background: #1A1A1A;">
+        {[
+          { label: '~90 activities', note: 'From very vanilla to genuinely advanced' },
+          { label: '7 categories', note: 'Sensory, power exchange, restraint, roleplay, service, language, aftercare' },
+          { label: '5 response options', note: 'Yes / Curious / Maybe someday / Not for us / Hard limit' },
+        ].map(({ label, note }) => (
+          <div class="px-8 py-8" style="background: #0F0F0F;">
+            <p class="font-serif text-2xl font-semibold mb-2" style="color: #EBEBEB;">{label}</p>
+            <p class="text-sm leading-relaxed" style="color: #888;">{note}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- How it works -->
+  <div style="background: #0A0A0A; border-top: 1px solid #1A1A1A;">
+    <div class="max-w-2xl mx-auto px-6 py-16">
+      <div class="prose mb-16">
+        <h2>How this works</h2>
+        <p>Pour two drinks. Sit down together. Not in bed — somewhere neutral where neither of you is performing. Read each activity out loud, mark your responses, then compare and talk.</p>
+        <p>The talking is the product. The checklist just gives you something to talk about. Most couples who do this say the same thing afterward: <em>"Why did we wait so long?"</em></p>
+        <p>The 5 response options mean you're not just answering yes or no. "Curious" is a real answer. "Maybe someday" is a real answer. You're not signing a contract — you're starting a conversation.</p>
+        <h2>What you'll actually get</h2>
+        <p>The checklist PDF, delivered to your inbox in about 90 seconds. Along with it: a short series from Mr. D on how to use what you discover — what to do when you have a lot of matches, what to do when you have significant mismatches, how to turn this into a real plan.</p>
+        <p>It takes about 30–45 minutes to go through together. Some couples go longer. That's a good sign.</p>
+      </div>
+
+      <FAQ items={faq} />
+    </div>
+  </div>
+
+</BaseLayout>

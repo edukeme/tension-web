@@ -1,0 +1,70 @@
+---
+title: "Example: How to Write a Tension Blog Post"
+slug: example-blog-post
+author: Mr. D
+date: 2026-05-20
+meta_description: "Template showing the correct structure for Tension blog posts with frontmatter, Quick Navigation, FAQ."
+primary_keyword: blog post structure
+secondary_keywords:
+  - how to write
+  - content template
+  - blog formatting
+category: kink-101
+wordcount: 850
+draft: false
+canonical_url: /blog/example-blog-post
+faq:
+  - q: "Do I need to write the Quick Navigation section?"
+    a: "No. The layout auto-generates it from your h2 and h3 headings. Do not include a manual Quick Navigation section."
+  - q: "Is FAQ required?"
+    a: "No. FAQ is optional. Only include it if your post has common reader questions. Leave it out of frontmatter if you don't need it."
+  - q: "How do I link to another section?"
+    a: "Use markdown links: [Go to Main Section](#main-section). The layout auto-generates heading IDs."
+---
+
+import CTABlock from '@/components/CTABlock.astro';
+
+This post explains how the Tension blog layout works and what gets auto-generated for you.
+
+## Main Section
+
+This is a main section (h2). It will automatically appear in the Quick Navigation box at the top with a clickable link.
+
+Write your content normally. Use paragraphs, bold, italic, lists — normal markdown.
+
+- Bullet point 1
+- Bullet point 2
+- Bullet point 3
+
+### Subsection
+
+This is a subsection (h3). It also appears in Quick Navigation, indented under its parent h2.
+
+You can use as many h2 and h3 headings as you need. They all become Quick Navigation links.
+
+## Another Main Section
+
+Start a new h2 for a new major topic.
+
+The Quick Navigation automatically scans for these headings and creates a linked table of contents.
+
+### Subsection of This Section
+
+h3 headings indent under their parent h2.
+
+## About the FAQ
+
+The FAQ you defined in frontmatter renders at the bottom of the post. Readers see your questions and answers in a styled box.
+
+You can link to CTABlocks inline:
+
+<CTABlock product="21-scenes" />
+
+## What Gets Auto-Generated
+
+1. **Quick Navigation** — Links to all h2 and h3 headings
+2. **FAQ** — Questions and answers from frontmatter (optional)
+3. **Heading IDs** — Auto-generated for linking
+4. **JSON-LD** — Article schema for SEO
+
+You don't need to do anything for these. Just write, and the layout handles it.
