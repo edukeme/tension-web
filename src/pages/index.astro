@@ -24,14 +24,14 @@ const products = ORDER.map(slug => allProducts.find(p => p.data.slug === slug)).
   />
 
   <!-- Value props (Bento Grid Style) -->
-  <section class="py-24 px-6 relative overflow-hidden" style="background: #050505;">
+  <section class="py-24 px-6 relative overflow-hidden" style="background: #33333A; border-top: 1px solid #474752; border-bottom: 1px solid #474752;">
     <!-- Abstract subtle glow behind value props -->
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] opacity-20 pointer-events-none blur-[120px] rounded-full" style="background: radial-gradient(circle, #D4213D 0%, transparent 70%);"></div>
 
     <div class="max-w-5xl mx-auto relative z-10">
       <div class="text-center mb-16">
         <h2 class="font-serif font-medium text-3xl md:text-5xl text-white mb-6">Designed for privacy. Built for connection.</h2>
-        <p class="text-[#888] max-w-2xl mx-auto text-lg">A modern framework for power dynamics that respects the depth of the relationship behind it.</p>
+        <p class="text-[#ECECEC] max-w-2xl mx-auto text-lg">A modern framework for power dynamics that respects the depth of the relationship behind it.</p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
@@ -40,10 +40,10 @@ const products = ORDER.map(slug => allProducts.find(p => p.data.slug === slug)).
           { num: '02', title: 'Private', body: 'Everything is for you and your partner. No public profiles. No leaderboards. No one needs to know.' },
           { num: '03', title: 'Grounded', body: 'Every resource is built on consent, safety, and emotional intelligence — not just heat.' },
         ].map(({ num, title, body }) => (
-          <div class="p-8 rounded-3xl transition-transform hover:-translate-y-2 duration-500" style="background: rgba(20,20,20,0.6); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.05); box-shadow: inset 0 0 20px rgba(255,255,255,0.02);">
-            <p class="font-serif font-medium mb-6 text-4xl" style="color: rgba(255,255,255,0.1);">{num}</p>
+          <div class="p-8 rounded-3xl transition-transform hover:-translate-y-2 duration-500" style="background: #42424E; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 12px 36px rgba(0,0,0,0.45);">
+            <p class="font-serif font-medium mb-6 text-4xl" style="color: rgba(255,255,255,0.2);">{num}</p>
             <h3 class="font-serif text-xl font-medium mb-3 text-white">{title}</h3>
-            <p class="text-[#999] leading-relaxed font-light">{body}</p>
+            <p class="text-[#FFFFFF] leading-relaxed font-light">{body}</p>
           </div>
         ))}
       </div>
@@ -51,7 +51,7 @@ const products = ORDER.map(slug => allProducts.find(p => p.data.slug === slug)).
   </section>
 
   <!-- Products grid -->
-  <section id="products" class="py-24 px-6 relative" style="background: #000;">
+  <section id="products" class="py-24 px-6 relative" style="background: #000000;">
     <div class="max-w-5xl mx-auto">
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
         <div class="max-w-2xl">
@@ -62,14 +62,14 @@ const products = ORDER.map(slug => allProducts.find(p => p.data.slug === slug)).
           <h2 class="font-serif font-medium leading-tight mb-4 text-white" style="font-size: clamp(2rem, 5vw, 3.5rem); letter-spacing: -0.02em;">
             For the dynamic you're building
           </h2>
-          <p class="text-lg text-[#888] font-light">
+          <p class="text-lg text-[#D4D4D4] font-light">
             Written by Mr. D from the perspective of someone who has actually done this.
           </p>
         </div>
       </div>
       
       <!-- Feature Bundle with Generated Image -->
-      <div class="mb-6 rounded-3xl overflow-hidden relative group" style="background: #111; border: 1px solid rgba(255,255,255,0.05);">
+      <div class="mb-6 rounded-3xl overflow-hidden relative group" style="background: #161619; border: 1px solid rgba(255,255,255,0.12);">
         <div class="absolute inset-0 z-0">
           <img src="/images/tension_products.png" alt="Tension Products Collection" class="w-full h-full object-cover opacity-40 mix-blend-lighten group-hover:opacity-50 transition-opacity duration-700" />
           <div class="absolute inset-0 bg-gradient-to-r from-[#000] via-[#000]/80 to-transparent"></div>
@@ -79,7 +79,7 @@ const products = ORDER.map(slug => allProducts.find(p => p.data.slug === slug)).
             The Complete Collection
           </span>
           <h3 class="text-3xl md:text-4xl font-serif font-medium text-white mb-4">The D/s Mastery Bundle</h3>
-          <p class="text-[#999] mb-8 text-lg font-light leading-relaxed">Everything in one place. All 5 PDFs, the audio stories, exclusive bonus material, and early app access. The entire foundation for a dynamic that works.</p>
+          <p class="text-[#ECECEC] mb-8 text-lg font-light leading-relaxed">Everything in one place. All 5 PDFs, the audio stories, exclusive bonus material, and early app access. The entire foundation for a dynamic that works.</p>
           <a href="/bundle" class="inline-flex items-center gap-2 px-8 py-3 text-sm font-medium rounded-full bg-white text-black hover:bg-gray-200 transition-colors">
             Get the Bundle →
           </a>
@@ -104,7 +104,7 @@ const products = ORDER.map(slug => allProducts.find(p => p.data.slug === slug)).
   </section>
 
   <!-- Lead magnet -->
-  <section class="py-32 px-6 relative overflow-hidden" style="background: #0A0A0A;">
+  <section class="py-32 px-6 relative overflow-hidden" style="background: #3A3A48; border-top: 1px solid #4E4E62; border-bottom: 1px solid #4E4E62;">
     <!-- Abstract blurred orb -->
     <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-[#D4213D] opacity-5 rounded-full blur-[150px] translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
 
@@ -116,43 +116,43 @@ const products = ORDER.map(slug => allProducts.find(p => p.data.slug === slug)).
             <span class="text-xs font-semibold tracking-[0.2em] uppercase text-[#D4213D]">Free Tool</span>
           </div>
           <h2 class="font-serif font-medium mb-6 text-white leading-tight" style="font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.02em;">
-            Start here: <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-[#888]">The Couples Checklist</span>
+            Start here: <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-[#ECECEC]">The Couples Checklist</span>
           </h2>
-          <p class="text-lg leading-relaxed mb-10 font-light text-[#888] max-w-md">
+          <p class="text-lg leading-relaxed mb-10 font-light text-[#FFFFFF] max-w-md">
             90 activities, 7 categories, 5 response options. The conversation most couples never have — structured and made easier.
           </p>
           <div class="flex flex-col gap-4 mb-10">
             {['90 activities across 7 categories', 'Done together, not separately', 'Free. Yours in 90 seconds.'].map(item => (
-              <div class="flex items-center gap-4 text-[15px] font-light text-[#AAA]">
+              <div class="flex items-center gap-4 text-[15px] font-light text-[#FFFFFF]">
                 <div class="w-1.5 h-1.5 rounded-full bg-[#D4213D]"></div>
                 {item}
               </div>
             ))}
           </div>
           <EmailCaptureForm />
-          <p class="text-xs mt-6 text-[#555] font-light">No spam. Unsubscribe any time.</p>
+          <p class="text-xs mt-6 text-[#B8B8B8] font-light">No spam. Unsubscribe any time.</p>
         </div>
         <div class="hidden md:flex justify-end relative">
-          <div class="w-full max-w-[380px] aspect-[4/5] rounded-3xl relative overflow-hidden flex flex-col justify-between p-10" style="background: linear-gradient(180deg, #1A1A1A 0%, #0F0F0F 100%); border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 40px 80px rgba(0,0,0,0.5);">
+          <div class="w-full max-w-[380px] aspect-[4/5] rounded-3xl relative overflow-hidden flex flex-col justify-between p-10" style="background: linear-gradient(180deg, #373744 0%, #202028 100%); border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 40px 80px rgba(0,0,0,0.55);">
             <div class="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none"></div>
             
             <div class="relative z-10">
               <p class="font-serif text-7xl font-medium mb-1 text-white">90</p>
-              <p class="text-xs tracking-[0.2em] uppercase text-[#666]">Activities</p>
+              <p class="text-xs tracking-[0.2em] uppercase text-[#CCCCCC]">Activities</p>
             </div>
             
             <div class="w-full h-px bg-white/5 relative z-10 my-8"></div>
             
             <div class="relative z-10">
               <p class="font-serif text-5xl font-medium mb-1 text-white">7</p>
-              <p class="text-xs tracking-[0.2em] uppercase text-[#666]">Categories</p>
+              <p class="text-xs tracking-[0.2em] uppercase text-[#CCCCCC]">Categories</p>
             </div>
             
             <div class="w-full h-px bg-white/5 relative z-10 my-8"></div>
             
             <div class="relative z-10">
               <p class="font-serif text-5xl font-medium mb-1 text-[#D4213D]">5</p>
-              <p class="text-xs tracking-[0.2em] uppercase text-[#666]">Response options</p>
+              <p class="text-xs tracking-[0.2em] uppercase text-[#CCCCCC]">Response options</p>
             </div>
           </div>
         </div>
@@ -161,12 +161,12 @@ const products = ORDER.map(slug => allProducts.find(p => p.data.slug === slug)).
   </section>
 
   <!-- Blog teaser with Generated Images -->
-  <section class="py-24 px-6 relative" style="background: #050505; border-top: 1px solid rgba(255,255,255,0.02);">
+  <section class="py-24 px-6 relative" style="background: #202026; border-top: 1px solid #32323C;">
     <div class="max-w-5xl mx-auto">
       <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-16">
         <div>
           <h2 class="font-serif text-3xl md:text-4xl font-medium mb-3 text-white">From the journal</h2>
-          <p class="text-lg text-[#888] font-light">Plain-language guides on power dynamics, scenes, and intentional intimacy.</p>
+          <p class="text-lg text-[#ECECEC] font-light">Plain-language guides on power dynamics, scenes, and intentional intimacy.</p>
         </div>
         <a href="/blog" class="inline-flex items-center gap-2 text-sm font-semibold tracking-wide uppercase transition-colors text-[#D4213D] hover:text-white">
           Read all entries →

@@ -18,11 +18,11 @@ const {
 } = Astro.props;
 ---
 
-<section class="relative min-h-[90vh] flex items-center justify-center pt-24 pb-16 px-6 overflow-hidden bg-[#0A0A0A]">
+<section class="relative min-h-[90vh] flex items-center justify-center pt-24 pb-16 px-6 overflow-hidden bg-[#0A0A0C]">
   <!-- Hero Background Image with Blur/Gradient overlay -->
   <div class="absolute inset-0 z-0">
     <img src="/images/tension_hero_bg.png" alt="Tension abstract background" class="w-full h-full object-cover opacity-60 mix-blend-screen scale-105" style="filter: blur(6px); transform: scale(1.05);" />
-    <div class="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/30 via-[#0A0A0A]/70 to-[#0A0A0A]"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0A0A0C]/30 via-[#0A0A0C]/70 to-[#0A0A0C]"></div>
   </div>
 
   <div class="max-w-5xl mx-auto relative z-10 w-full text-center flex flex-col items-center">
@@ -36,13 +36,13 @@ const {
     </div>
 
     <!-- Headline -->
-    <h1 class="font-serif font-medium leading-[0.95] mb-8 text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#888888]"
+    <h1 class="font-serif font-medium leading-[0.95] mb-8 text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#D4D4D4]"
         style="font-size: clamp(3.5rem, 10vw, 7rem); letter-spacing: -0.04em; max-width: 12ch;">
       {headline}
     </h1>
 
     <!-- Subhead -->
-    <p class="text-lg md:text-xl leading-relaxed mb-12 text-[#999] font-light max-w-[48ch]">
+    <p class="text-lg md:text-xl leading-relaxed mb-12 text-[#E5E5E5] font-light max-w-[48ch]">
       {subhead}
     </p>
 
@@ -61,9 +61,9 @@ const {
         <a
           href={secondaryHref}
           class="inline-flex items-center gap-2 px-8 py-4 text-sm font-medium rounded-full transition-all duration-300 backdrop-blur-md"
-          style="border: 1px solid rgba(255,255,255,0.15); color: #ccc; background: rgba(0,0,0,0.4);"
+          style="border: 1px solid rgba(255,255,255,0.25); color: #E5E5E5; background: rgba(0,0,0,0.4);"
           onmouseover="this.style.borderColor='rgba(255,255,255,0.4)'; this.style.color='#fff'; this.style.background='rgba(255,255,255,0.1)'"
-          onmouseout="this.style.borderColor='rgba(255,255,255,0.15)'; this.style.color='#ccc'; this.style.background='rgba(0,0,0,0.4)'"
+          onmouseout="this.style.borderColor='rgba(255,255,255,0.25)'; this.style.color='#E5E5E5'; this.style.background='rgba(0,0,0,0.4)'"
         >
           {secondaryLabel}
         </a>

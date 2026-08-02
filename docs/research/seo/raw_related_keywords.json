@@ -1,0 +1,180 @@
+{
+  "version": "0.1.20260430",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "0.0871 sec.",
+  "cost": 0.0101,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "05111442-1683-0387-0000-e33c8df9b9dd",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "0.0332 sec.",
+      "cost": 0.0101,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "dataforseo_labs",
+        "google",
+        "related_keywords",
+        "live"
+      ],
+      "data": {
+        "api": "dataforseo_labs",
+        "function": "related_keywords",
+        "se_type": "google",
+        "keyword": "BDSM for beginners",
+        "location_code": 2840,
+        "language_code": "en",
+        "limit": 100
+      },
+      "result": [
+        {
+          "se_type": "google",
+          "seed_keyword": "bdsm for beginners",
+          "seed_keyword_data": null,
+          "location_code": 2840,
+          "language_code": "en",
+          "total_count": 1,
+          "items_count": 1,
+          "items": [
+            {
+              "se_type": "google",
+              "keyword_data": {
+                "se_type": "google",
+                "keyword": "bdsm for beginners",
+                "location_code": 2840,
+                "language_code": "en",
+                "keyword_info": {
+                  "se_type": "google",
+                  "last_updated_time": "2026-04-10 07:30:38 +00:00",
+                  "competition": 0.3,
+                  "competition_level": "LOW",
+                  "cpc": 0.43,
+                  "search_volume": 1300,
+                  "low_top_of_page_bid": 0.03,
+                  "high_top_of_page_bid": 0.67,
+                  "categories": [
+                    10002,
+                    10028,
+                    11063
+                  ],
+                  "monthly_searches": [
+                    {
+                      "year": 2026,
+                      "month": 3,
+                      "search_volume": 1000
+                    },
+                    {
+                      "year": 2026,
+                      "month": 2,
+                      "search_volume": 1000
+                    },
+                    {
+                      "year": 2026,
+                      "month": 1,
+                      "search_volume": 1300
+                    },
+                    {
+                      "year": 2025,
+                      "month": 12,
+                      "search_volume": 1300
+                    },
+                    {
+                      "year": 2025,
+                      "month": 11,
+                      "search_volume": 1300
+                    },
+                    {
+                      "year": 2025,
+                      "month": 10,
+                      "search_volume": 1300
+                    },
+                    {
+                      "year": 2025,
+                      "month": 9,
+                      "search_volume": 1300
+                    },
+                    {
+                      "year": 2025,
+                      "month": 8,
+                      "search_volume": 1300
+                    },
+                    {
+                      "year": 2025,
+                      "month": 7,
+                      "search_volume": 1300
+                    },
+                    {
+                      "year": 2025,
+                      "month": 6,
+                      "search_volume": 1300
+                    },
+                    {
+                      "year": 2025,
+                      "month": 5,
+                      "search_volume": 1300
+                    },
+                    {
+                      "year": 2025,
+                      "month": 4,
+                      "search_volume": 1300
+                    }
+                  ],
+                  "search_volume_trend": {
+                    "monthly": 0,
+                    "quarterly": -23,
+                    "yearly": -38
+                  }
+                },
+                "keyword_info_normalized_with_bing": null,
+                "keyword_info_normalized_with_clickstream": null,
+                "clickstream_keyword_info": null,
+                "keyword_properties": {
+                  "se_type": "google",
+                  "core_keyword": null,
+                  "synonym_clustering_algorithm": "text_processing",
+                  "keyword_difficulty": 21,
+                  "detected_language": "en",
+                  "is_another_language": false
+                },
+                "serp_info": {
+                  "se_type": "google",
+                  "check_url": "https://www.google.com/search?q=bdsm%20for%20beginners&hl=en&gl=US&ie=UTF-8&uule=w+CAIQIFISCQs2MuSEtepUEUK33kOSuTsc",
+                  "serp_item_types": [
+                    "organic",
+                    "ai_overview"
+                  ],
+                  "se_results_count": 7670000,
+                  "last_updated_time": "2026-03-30 16:02:59 +00:00",
+                  "previous_updated_time": "2026-02-09 09:30:03 +00:00"
+                },
+                "avg_backlinks_info": {
+                  "se_type": "google",
+                  "backlinks": 127.1,
+                  "dofollow": 45.5,
+                  "referring_pages": 117.3,
+                  "referring_domains": 83.9,
+                  "referring_main_domains": 63.7,
+                  "rank": 117.8,
+                  "main_domain_rank": 515.9,
+                  "last_updated_time": "2026-03-30 13:03:02 +00:00"
+                },
+                "search_intent_info": {
+                  "se_type": "google",
+                  "main_intent": "informational",
+                  "foreign_intent": null,
+                  "last_updated_time": "2026-04-29 03:49:01 +00:00"
+                }
+              },
+              "depth": 0,
+              "related_keywords": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

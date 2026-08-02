@@ -1,0 +1,2723 @@
+{
+  "version": "0.1.20260430",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "0.3572 sec.",
+  "cost": 0.014,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "05111445-1683-0591-0000-ab90b8988a46",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "0.3004 sec.",
+      "cost": 0.014,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "keywords_data",
+        "clickstream_data",
+        "bulk_search_volume",
+        "live"
+      ],
+      "data": {
+        "api": "keywords_data",
+        "function": "bulk_search_volume",
+        "se": "clickstream_data",
+        "keywords": [
+          "BDSM for beginners",
+          "BDSM checklist",
+          "how to start BDSM",
+          "submissive training",
+          "dominant guide",
+          "bondage for beginners",
+          "BDSM safety",
+          "aftercare",
+          "BDSM scene ideas",
+          "D/s relationship",
+          "BDSM couples",
+          "kink education",
+          "BDSM coaching",
+          "spanking guide",
+          "bondage safety",
+          "BDSM negotiation",
+          "introducing kink",
+          "BDSM relationship",
+          "power exchange",
+          "BDSM for couples",
+          "submissive psychology",
+          "dominant training",
+          "kink checklist",
+          "first time bondage",
+          "BDSM aftercare",
+          "submissive checklist",
+          "kink scene ideas",
+          "dom sub relationship",
+          "BDSM scene planner",
+          "BDSM for beginners guide",
+          "how to be dominant",
+          "how to be submissive",
+          "kink for couples",
+          "BDSM basics",
+          "beginner bondage",
+          "light bondage",
+          "sensory deprivation",
+          "blindfold play",
+          "impact play guide",
+          "BDSM rules for beginners"
+        ],
+        "location_code": 2840,
+        "language_code": "en"
+      },
+      "result": [
+        {
+          "location_code": 2840,
+          "items_count": 40,
+          "items": [
+            {
+              "keyword": "beginner bondage",
+              "search_volume": 0,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 104
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 156
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 156
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 156
+                }
+              ]
+            },
+            {
+              "keyword": "submissive training",
+              "search_volume": 0,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 104
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 104
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 104
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 104
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 104
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 156
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 156
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 208
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 208
+                }
+              ]
+            },
+            {
+              "keyword": "sensory deprivation",
+              "search_volume": 3126,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 3126
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 3126
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 3022
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 3126
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 3335
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 3283
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 3543
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 3335
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 3230
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 3074
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 2970
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 3022
+                }
+              ]
+            },
+            {
+              "keyword": "bdsm relationship",
+              "search_volume": 364,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 364
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 416
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 469
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 521
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 469
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 416
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 364
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 260
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 260
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 260
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 260
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 260
+                }
+              ]
+            },
+            {
+              "keyword": "light bondage",
+              "search_volume": 364,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 364
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 312
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 364
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 260
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 364
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 364
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 364
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 312
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 416
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 312
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 312
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 312
+                }
+              ]
+            },
+            {
+              "keyword": "bdsm checklist",
+              "search_volume": 2657,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 2657
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 2970
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 3074
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 3178
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 3491
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 3491
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 3283
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 3178
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 2918
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 2761
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 2449
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 2501
+                }
+              ]
+            },
+            {
+              "keyword": "bdsm aftercare",
+              "search_volume": 312,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 312
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 312
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 364
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 364
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 364
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 364
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 312
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 260
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 260
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 312
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 156
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 208
+                }
+              ]
+            },
+            {
+              "keyword": "first time bondage",
+              "search_volume": 208,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 208
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 208
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 208
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 208
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 208
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 260
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 260
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 260
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 260
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 312
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 260
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 260
+                }
+              ]
+            },
+            {
+              "keyword": "bondage for beginners",
+              "search_volume": 208,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 208
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 208
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 208
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 312
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 312
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 312
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 312
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 312
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 260
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 260
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 208
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 156
+                }
+              ]
+            },
+            {
+              "keyword": "kink education",
+              "search_volume": 52,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 0
+                }
+              ]
+            },
+            {
+              "keyword": "power exchange",
+              "search_volume": 2553,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 2553
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 2449
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 2397
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 2397
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 2136
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 2292
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 2397
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 2188
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 2032
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 2136
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 1980
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 1928
+                }
+              ]
+            },
+            {
+              "keyword": "kink checklist",
+              "search_volume": 885,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 885
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 1042
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 1302
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 1459
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 1407
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 1511
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 1354
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 1459
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 1511
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 1459
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 1511
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 1459
+                }
+              ]
+            },
+            {
+              "keyword": "d/s relationship",
+              "search_volume": 260,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 260
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 364
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 364
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 312
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 260
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 260
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 312
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 364
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 312
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 364
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 416
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 469
+                }
+              ]
+            },
+            {
+              "keyword": "spanking guide",
+              "search_volume": 104,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 104
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 104
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 104
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 104
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 104
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 208
+                }
+              ]
+            },
+            {
+              "keyword": "dom sub relationship",
+              "search_volume": 104,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 104
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 104
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 104
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 104
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 156
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 208
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 208
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 156
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 208
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 156
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 156
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 156
+                }
+              ]
+            },
+            {
+              "keyword": "how to be submissive",
+              "search_volume": 104,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 104
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 104
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 104
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 156
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 104
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 104
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 104
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 104
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 104
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 156
+                }
+              ]
+            },
+            {
+              "keyword": "bdsm for beginners",
+              "search_volume": 260,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 260
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 260
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 260
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 260
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 260
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 260
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 260
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 260
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 208
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 260
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 312
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 312
+                }
+              ]
+            },
+            {
+              "keyword": "bdsm scene ideas",
+              "search_volume": 104,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 104
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 104
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 104
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 104
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 104
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 104
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 208
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 156
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 156
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 156
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 208
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 208
+                }
+              ]
+            },
+            {
+              "keyword": "how to start bdsm",
+              "search_volume": 0,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 52
+                }
+              ]
+            },
+            {
+              "keyword": "bdsm safety",
+              "search_volume": 0,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 52
+                }
+              ]
+            },
+            {
+              "keyword": "how to be dominant",
+              "search_volume": 260,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 260
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 312
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 312
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 312
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 312
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 364
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 364
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 364
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 364
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 364
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 416
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 416
+                }
+              ]
+            },
+            {
+              "keyword": "bdsm couples",
+              "search_volume": 0,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 52
+                }
+              ]
+            },
+            {
+              "keyword": "dominant guide",
+              "search_volume": 0,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 52
+                }
+              ]
+            },
+            {
+              "keyword": "impact play guide",
+              "search_volume": 0,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 52
+                }
+              ]
+            },
+            {
+              "keyword": "bdsm for couples",
+              "search_volume": 52,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 0
+                }
+              ]
+            },
+            {
+              "keyword": "kink scene ideas",
+              "search_volume": 52,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 52
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 0
+                }
+              ]
+            },
+            {
+              "keyword": "aftercare",
+              "search_volume": 6618,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 6618
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 6930
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 7035
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 6930
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 6930
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 7087
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 7087
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 6878
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 6878
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 6618
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 6409
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 6461
+                }
+              ]
+            },
+            {
+              "keyword": "bdsm coaching",
+              "search_volume": 0,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 0
+                }
+              ]
+            },
+            {
+              "keyword": "bondage safety",
+              "search_volume": 0,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 0
+                }
+              ]
+            },
+            {
+              "keyword": "bdsm negotiation",
+              "search_volume": 0,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 0
+                }
+              ]
+            },
+            {
+              "keyword": "introducing kink",
+              "search_volume": 0,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 0
+                }
+              ]
+            },
+            {
+              "keyword": "submissive psychology",
+              "search_volume": 0,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 0
+                }
+              ]
+            },
+            {
+              "keyword": "dominant training",
+              "search_volume": 0,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 0
+                }
+              ]
+            },
+            {
+              "keyword": "submissive checklist",
+              "search_volume": 0,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 0
+                }
+              ]
+            },
+            {
+              "keyword": "bdsm scene planner",
+              "search_volume": 0,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 0
+                }
+              ]
+            },
+            {
+              "keyword": "bdsm for beginners guide",
+              "search_volume": 0,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 0
+                }
+              ]
+            },
+            {
+              "keyword": "kink for couples",
+              "search_volume": 0,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 0
+                }
+              ]
+            },
+            {
+              "keyword": "bdsm basics",
+              "search_volume": 0,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 0
+                }
+              ]
+            },
+            {
+              "keyword": "blindfold play",
+              "search_volume": 0,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 0
+                }
+              ]
+            },
+            {
+              "keyword": "bdsm rules for beginners",
+              "search_volume": 0,
+              "monthly_searches": [
+                {
+                  "year": 2026,
+                  "month": 4,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 3,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 2,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2026,
+                  "month": 1,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 12,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 11,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 10,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 9,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 8,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 7,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 6,
+                  "search_volume": 0
+                },
+                {
+                  "year": 2025,
+                  "month": 5,
+                  "search_volume": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

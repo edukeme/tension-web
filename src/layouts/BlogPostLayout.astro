@@ -2,6 +2,10 @@
 import BaseLayout from './BaseLayout.astro';
 import { buildTitle, SITE_URL } from '@/lib/seo';
 import FAQ from '@/components/FAQ.astro';
+import { pillarLabel, type PillarSlug } from '@/lib/content';
+
+interface Source { title: string; url: string; publisher?: string; }
+interface RelatedPost { title: string; slug: string; description: string; }
 
 interface Props {
   title: string;
@@ -13,7 +17,13 @@ interface Props {
   slug: string;
   faq?: Array<{ q: string; a: string }>;
   category?: string;
+  pillar: PillarSlug;
   wordcount?: number;
+  heroImage?: string;
+  secondaryKeywords?: string[];
+  keyTakeaways?: string[];
+  sources?: Source[];
+  relatedPosts?: RelatedPost[];
 }
 
 const {
@@ -25,48 +35,71 @@ const {
   slug,
   faq,
   category,
+  pillar,
   primaryKeyword,
   wordcount,
+  heroImage,
+  secondaryKeywords = [],
+  keyTakeaways = [],
+  sources = [],
+  relatedPosts = [],
 } = Astro.props;
 
 const canonical = `${SITE_URL}/blog/${slug}/`;
 const publishedISO = date.toISOString();
 const updatedISO = (updated ?? date).toISOString();
 
-const jsonLd = {
+const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: title,
   description,
-  author: { '@type': 'Person', name: author },
-  publisher: { '@type': 'Organization', name: 'Tension' },
+  author: { '@type': 'Person', name: author, url: `${SITE_URL}/about/` },
+  publisher: { '@id': `${SITE_URL}/#organization` },
   datePublished: publishedISO,
   dateModified: updatedISO,
   mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
   url: canonical,
+  image: heroImage ? new URL(heroImage, SITE_URL).href : undefined,
+  keywords: [primaryKeyword, ...secondaryKeywords].filter(Boolean).join(', '),
+  articleSection: pillarLabel(pillar),
+  isAccessibleForFree: true,
+  inLanguage: 'en',
+};
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog/` },
+    { '@type': 'ListItem', position: 3, name: pillarLabel(pillar), item: `${SITE_URL}/blog/topic/${pillar}/` },
+    { '@type': 'ListItem', position: 4, name: title, item: canonical },
+  ],
 };
 
 const formattedDate = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 const readTime = Math.ceil((wordcount || 1500) / 200);
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical}>
+<BaseLayout title={title} description={description} canonical={canonical} ogImage={heroImage ? new URL(heroImage, SITE_URL).href : undefined}>
   <Fragment slot="head">
-    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
   </Fragment>
 
   <!-- Post hero strip (Large banner with background couple image) -->
   <div class="relative w-full py-24 md:py-32 px-6 flex items-center bg-[#0A0A0A] overflow-hidden border-b border-white/5">
     
     <!-- Filtered Background Image Layer -->
-    <div 
+    <div
       class="absolute inset-0 w-full h-full z-0"
-      style={`
-        background-image: linear-gradient(to right, rgba(10, 10, 12, 0.95) 30%, rgba(10, 10, 12, 0.4) 100%), url('/images/blog_${slug}.png'); 
+      style={heroImage ? `
+        background-image: linear-gradient(to right, rgba(10, 10, 12, 0.95) 30%, rgba(10, 10, 12, 0.4) 100%), url('${heroImage}');
         background-size: cover; 
         background-position: center;
         filter: grayscale(100%) sepia(100%) hue-rotate(345deg) saturate(2.5) contrast(1.5) brightness(0.65);
-      `}
+      ` : 'background: radial-gradient(circle at 75% 30%, rgba(212,33,61,0.22), transparent 40%), linear-gradient(135deg, #17171c, #09090b);'}
     ></div>
 
     <div class="max-w-4xl mx-auto w-full relative z-10">
@@ -82,6 +115,9 @@ const readTime = Math.ceil((wordcount || 1500) / 200);
             {category}
           </span>
         )}
+        <a href={`/blog/topic/${pillar}/`} class="px-3.5 py-1 text-[10px] font-bold tracking-widest uppercase rounded-full bg-white/5 text-gray-300 border border-white/10 hover:border-white/30">
+          {pillarLabel(pillar)}
+        </a>
         {primaryKeyword && (
           <span class="px-3.5 py-1 text-[10px] font-bold tracking-widest uppercase rounded-full bg-red-600/20 text-red-400 border border-red-500/20">
             {primaryKeyword}
@@ -100,7 +136,7 @@ const readTime = Math.ceil((wordcount || 1500) / 200);
           <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
           </svg>
-          {author}
+          <a href="/about/" class="hover:text-white">{author}</a>
         </span>
         <span class="flex items-center gap-1.5">
           <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -121,9 +157,19 @@ const readTime = Math.ceil((wordcount || 1500) / 200);
   <!-- Post body (Dark background) -->
   <article class="bg-[#0A0A0A]">
     <div class="max-w-2xl mx-auto px-6 py-16">
+      <div class="mb-12 p-6 rounded-xl border border-white/10 bg-white/[0.03]">
+        <p class="text-[10px] font-bold tracking-[0.2em] uppercase text-[#D4213D] mb-3">In brief</p>
+        <p class="text-base leading-relaxed text-gray-200">{description}</p>
+        {keyTakeaways.length > 0 && (
+          <ul class="mt-4 space-y-2 text-sm text-gray-300">
+            {keyTakeaways.map(item => <li class="flex gap-3"><span class="text-[#D4213D]">—</span><span>{item}</span></li>)}
+          </ul>
+        )}
+      </div>
+
       <!-- Table of Contents -->
       <nav id="toc" class="mb-12 pl-6 py-1 border-l-2 border-blue-500">
-        <h2 class="text-[10px] font-bold tracking-[0.25em] uppercase text-gray-500 mb-4">Neste Artigo</h2>
+        <h2 class="text-[10px] font-bold tracking-[0.25em] uppercase text-gray-500 mb-4">In this article</h2>
         <ol id="toc-list" class="space-y-3 text-sm font-medium text-blue-400 list-decimal pl-4">
           <!-- Filled by JavaScript -->
         </ol>
@@ -139,6 +185,37 @@ const readTime = Math.ceil((wordcount || 1500) / 200);
           <FAQ items={faq} />
         </div>
       )}
+
+      {sources.length > 0 && (
+        <section class="mt-16 pt-12 border-t border-[#1E1E1E]" aria-labelledby="sources-heading">
+          <h2 id="sources-heading" class="font-serif text-2xl text-white mb-5">Sources and further reading</h2>
+          <ol class="space-y-3 text-sm text-gray-400">
+            {sources.map(source => (
+              <li>
+                <a href={source.url} rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 underline underline-offset-4">{source.title}</a>
+                {source.publisher && <span> — {source.publisher}</span>}
+              </li>
+            ))}
+          </ol>
+          <p class="mt-5 text-xs leading-relaxed text-gray-500">Research on many BDSM experiences remains limited. Sources are used to distinguish preliminary findings from community practice and personal experience.</p>
+        </section>
+      )}
+
+      {relatedPosts.length > 0 && (
+        <section class="mt-16 pt-12 border-t border-[#1E1E1E]" aria-labelledby="related-heading">
+          <h2 id="related-heading" class="font-serif text-2xl text-white mb-6">Continue with {pillarLabel(pillar)}</h2>
+          <div class="space-y-4">
+            {relatedPosts.map(post => (
+              <a href={`/blog/${post.slug}/`} class="block p-5 rounded-xl border border-white/10 bg-white/[0.03] hover:border-[#D4213D]/60">
+                <h3 class="font-serif text-lg text-white mb-2">{post.title}</h3>
+                <p class="text-sm text-gray-400">{post.description}</p>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <p class="mt-12 text-xs leading-relaxed text-gray-500">Educational content for adults. Not medical, psychological, legal, or crisis advice. Read our <a href="/editorial-policy/" class="underline">editorial policy</a>.</p>
     </div>
   </article>
 

@@ -7,15 +7,15 @@ const year = new Date().getFullYear();
     <div class="flex flex-col md:flex-row justify-between gap-10">
 
       <div class="max-w-xs">
-        <p class="font-serif text-lg font-semibold tracking-[0.12em] uppercase mb-3" style="color: #EBEBEB;">Tension</p>
-        <p class="text-sm leading-relaxed" style="color: #555;">
+        <p class="font-serif text-lg font-semibold tracking-[0.12em] uppercase mb-3" style="color: #FFFFFF;">Tension</p>
+        <p class="text-sm leading-relaxed" style="color: #888888;">
           Intentional intimacy coaching. For couples who want more than fine.
         </p>
       </div>
 
       <div class="flex gap-16 text-sm">
         <div>
-          <p class="font-semibold mb-4 text-xs tracking-widest uppercase" style="color: #444; letter-spacing: 0.14em;">Products</p>
+          <p class="font-semibold mb-4 text-xs tracking-widest uppercase" style="color: #737373; letter-spacing: 0.14em;">Products</p>
           <ul class="space-y-2.5">
             {[
               ['/21-scenes', '21 Scenes'],
@@ -26,9 +26,9 @@ const year = new Date().getFullYear();
               ['/bundle', 'The Bundle'],
             ].map(([href, label]) => (
               <li>
-                <a href={href} style="color: #888;"
-                  onmouseover="this.style.color='#EBEBEB'"
-                  onmouseout="this.style.color='#666'"
+                <a href={href} style="color: #A3A3A3;"
+                  onmouseover="this.style.color='#FFFFFF'"
+                  onmouseout="this.style.color='#A3A3A3'"
                 >{label}</a>
               </li>
             ))}
@@ -36,7 +36,7 @@ const year = new Date().getFullYear();
         </div>
 
         <div>
-          <p class="font-semibold mb-4 text-xs tracking-widest uppercase" style="color: #444; letter-spacing: 0.14em;">Resources</p>
+          <p class="font-semibold mb-4 text-xs tracking-widest uppercase" style="color: #737373; letter-spacing: 0.14em;">Resources</p>
           <ul class="space-y-2.5">
             {[
               ['/free-checklist', 'Free Checklist'],
@@ -45,9 +45,9 @@ const year = new Date().getFullYear();
               ['/privacy', 'Privacy'],
             ].map(([href, label]) => (
               <li>
-                <a href={href} style="color: #888;"
-                  onmouseover="this.style.color='#EBEBEB'"
-                  onmouseout="this.style.color='#666'"
+                <a href={href} style="color: #A3A3A3;"
+                  onmouseover="this.style.color='#FFFFFF'"
+                  onmouseout="this.style.color='#A3A3A3'"
                 >{label}</a>
               </li>
             ))}
@@ -58,7 +58,7 @@ const year = new Date().getFullYear();
     </div>
 
     <div class="mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-2 text-xs"
-         style="border-top: 1px solid #1A1A1A; color: #444;">
+         style="border-top: 1px solid #2A2A2A; color: #666666;">
       <p>© {year} Tension. For adults 18+.</p>
       <p>Educational content only. Not a substitute for professional support.</p>
     </div>

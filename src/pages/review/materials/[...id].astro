@@ -1,0 +1,27 @@
+---
+import ReviewMaterialLayout from '@/layouts/ReviewMaterialLayout.astro';
+import { getCollection, render } from 'astro:content';
+import { REVIEW_MATERIALS } from '@/lib/product-review';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const materials = await getCollection('productMaterials');
+  return materials
+    .filter(material => REVIEW_MATERIALS[material.id])
+    .map(material => ({ params: { id: material.id }, props: { material } }));
+}
+
+const { material } = Astro.props;
+const info = REVIEW_MATERIALS[material.id];
+const { Content } = await render(material);
+---
+
+<ReviewMaterialLayout
+  title={info.title}
+  format={info.format}
+  status={info.status}
+  catalogSlug={info.catalogSlug}
+>
+  <Content />
+</ReviewMaterialLayout>

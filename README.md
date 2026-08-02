@@ -1,43 +1,48 @@
-# Astro Starter Kit: Minimal
+# Tension
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Tension is an Astro site for adults exploring intentional intimacy, BDSM, and D/s dynamics. It combines educational articles, email acquisition, and a catalog of digital products.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+## Project structure
 
 ```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+docs/                         Internal project knowledge
+  brand/                      Voice and editorial direction
+  content/blog/               Blog roadmap, drafts, and archived revisions
+  operations/                 Agent and operating notes
+  planning/                   Sprint plans
+  research/seo/               Keyword and competitor research datasets
+  strategy/                   Business, marketing, product, and technical plans
+
+public/                       Static web assets and finished downloads
+src/
+  components/                 Reusable Astro components
+  content/posts/              Canonical published blog articles
+  content/products/
+    catalog/                  Storefront metadata used by the website
+    lead-magnets/             Free source manuscripts
+    materials/                Paid product source manuscripts
+  layouts/                    Page layouts
+  lib/                        Shared application logic
+  pages/                      Site routes and API endpoints
+  styles/                     Global styles and design tokens
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+The website reads product records only from `src/content/products/catalog/**/*.json`. Markdown manuscripts are intentionally stored beside the catalog but are not published directly.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Content lifecycle
 
-Any static assets, like images, can be placed in the `public/` directory.
+1. Research and early drafts live in `docs/content/` and `docs/research/seo/`.
+2. A publish-ready article moves to `src/content/posts/` and receives complete frontmatter.
+3. Product copy is edited in `src/content/products/materials/` or `lead-magnets/`.
+4. Finished, approved PDF exports go in `public/downloads/` only when they are ready for delivery.
 
-## 🧞 Commands
+## Commands
 
-All commands are run from the root of the project, from a terminal:
+```sh
+npm install
+npm run dev
+npm run build
+npm run preview
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+The local development server runs at `http://localhost:4321` by default.

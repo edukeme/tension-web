@@ -1,0 +1,58 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  format: string;
+  status: 'catalogued' | 'future';
+  catalogSlug?: string;
+}
+
+const { title, format, status, catalogSlug } = Astro.props;
+---
+
+<BaseLayout
+  title={`${title} — Review Copy`}
+  description={`Ungated internal review copy of ${title}.`}
+  noIndex={true}
+>
+  <header class="border-b border-white/10 bg-[#10090b]">
+    <div class="max-w-4xl mx-auto px-6 py-14">
+      <a href="/review/materials/" class="text-xs font-semibold tracking-widest uppercase text-[#D4213D] hover:text-white">← Review library</a>
+      <p class="mt-8 text-[10px] font-bold tracking-[0.2em] uppercase text-gray-500">Ungated review copy · No checkout required</p>
+      <h1 class="font-serif text-4xl md:text-5xl text-white mt-3 mb-4">{title}</h1>
+      <div class="flex flex-wrap gap-3 text-xs text-gray-400">
+        <span>{format}</span>
+        <span aria-hidden="true">·</span>
+        <span>{status === 'future' ? 'Future product' : 'Catalogued product'}</span>
+        {catalogSlug && (
+          <>
+            <span aria-hidden="true">·</span>
+            <a href={`/${catalogSlug}/`} class="text-[#D4213D] hover:underline">View sales page</a>
+          </>
+        )}
+      </div>
+      <div class="mt-8 rounded-xl border border-amber-500/30 bg-amber-500/10 p-4 text-sm leading-relaxed text-amber-100">
+        This page renders the working manuscript directly. It may contain draft language, unfinished links, formatting notes, or material that still needs editorial and safety review.
+      </div>
+    </div>
+  </header>
+
+  <main class="bg-[#0A0A0A]">
+    <article class="max-w-3xl mx-auto px-6 py-16">
+      <div class="prose review-prose">
+        <slot />
+      </div>
+    </article>
+  </main>
+</BaseLayout>
+
+<style>
+  .review-prose :global(h1) { color: #fff; font-size: clamp(2rem, 5vw, 3rem); margin: 0 0 1.5rem; }
+  .review-prose :global(h2) { color: #f4f4f5; }
+  .review-prose :global(h3) { color: #e4e4e7; }
+  .review-prose :global(p),
+  .review-prose :global(li),
+  .review-prose :global(td) { color: #c7c7cc; }
+  .review-prose :global(table) { display: block; overflow-x: auto; }
+</style>

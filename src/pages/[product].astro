@@ -2,6 +2,7 @@
 import SalesPageLayout from '@/layouts/SalesPageLayout.astro';
 import SalesPageTemplate from '@/components/SalesPageTemplate.astro';
 import { getCollection } from 'astro:content';
+import { PRODUCT_REVIEW_LINKS } from '@/lib/product-review';
 
 export const prerender = true;
 
@@ -15,6 +16,7 @@ export async function getStaticPaths() {
 
 const { product } = Astro.props;
 const d = product.data;
+const reviewLink = PRODUCT_REVIEW_LINKS[d.slug];
 ---
 
 <SalesPageLayout title={d.title} description={d.meta_description}>
@@ -32,4 +34,14 @@ const d = product.data;
     slug={d.slug}
     title={d.title}
   />
+  {reviewLink && (
+    <aside class="bg-[#0A0A0A] border-t border-white/10">
+      <div class="max-w-3xl mx-auto px-6 py-10 text-center">
+        <p class="text-xs uppercase tracking-[0.18em] text-gray-500 mb-3">Testing mode</p>
+        <a href={reviewLink} class="inline-flex px-5 py-3 border border-[#D4213D] text-[#D4213D] hover:bg-[#D4213D] hover:text-white transition-colors">
+          Read the full ungated review copy →
+        </a>
+      </div>
+    </aside>
+  )}
 </SalesPageLayout>

@@ -1,0 +1,38 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { PILLARS, type PillarSlug } from '@/lib/content';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  return Object.keys(PILLARS).map(pillar => ({ params: { pillar }, props: { pillar } }));
+}
+
+const { pillar } = Astro.props as { pillar: PillarSlug };
+const topic = PILLARS[pillar];
+const posts = (await getCollection('posts', ({ data }) => !data.draft && data.pillar === pillar))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<BaseLayout title={`${topic.label} Guides`} description={topic.description} canonical={`/blog/topic/${pillar}/`}>
+  <header class="border-b border-white/10 bg-[#0A0A0A] px-6 py-20">
+    <div class="max-w-4xl mx-auto">
+      <a href="/blog/" class="text-xs uppercase tracking-widest text-gray-500 hover:text-white">← All topics</a>
+      <h1 class="font-serif text-4xl md:text-6xl text-white mt-6 mb-5">{topic.label}</h1>
+      <p class="max-w-2xl text-lg leading-relaxed text-gray-400">{topic.description}</p>
+    </div>
+  </header>
+
+  <main class="bg-[#0A0A0A] px-6 py-16 min-h-[55vh]">
+    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+      {posts.map(post => (
+        <article class="rounded-2xl border border-white/10 bg-white/[0.03] p-7">
+          <p class="text-[10px] uppercase tracking-[0.18em] text-[#D4213D] mb-4">{post.data.primary_keyword}</p>
+          <h2 class="font-serif text-2xl text-white mb-4"><a href={`/blog/${post.data.slug}/`} class="hover:text-[#D4213D]">{post.data.title}</a></h2>
+          <p class="text-sm leading-relaxed text-gray-400">{post.data.meta_description}</p>
+        </article>
+      ))}
+    </div>
+  </main>
+</BaseLayout>

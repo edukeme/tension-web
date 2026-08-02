@@ -35,11 +35,32 @@ const posts = defineCollection({
     secondary_keywords: z.array(z.string()).default([]),
     hero_image: z.string().optional(),
     category: z.enum(['kink-101', 'dynamics', 'scenes', 'aftercare', 'tests']),
+    pillar: z.enum(['start-here', 'relationships', 'consent-safety', 'headspace-aftercare', 'tools-guides']),
     wordcount: z.number(),
     draft: z.boolean().default(false),
     canonical_url: z.string().optional(),
+    key_takeaways: z.array(z.string()).min(2).max(5).optional(),
+    sources: z.array(z.object({
+      title: z.string(),
+      url: z.string().url(),
+      publisher: z.string().optional(),
+    })).default([]),
+    newsletter_order: z.number().int().positive().optional(),
+    newsletter_subject: z.string().max(60).optional(),
+    newsletter_preview: z.string().max(120).optional(),
     faq: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
   }),
 });
 
-export const collections = { products, posts };
+const productMaterials = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/products/materials' }),
+  schema: z.object({
+    title: z.string().optional(),
+    subtitle: z.string().optional(),
+    status: z.string().optional(),
+    author: z.string().optional(),
+    brand: z.string().optional(),
+  }).passthrough(),
+});
+
+export const collections = { products, posts, productMaterials };
