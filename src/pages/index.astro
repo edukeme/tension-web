@@ -224,7 +224,7 @@ const journal = [
   .process-line::before,.process-line::after { content:''; position:absolute; top:-2px; width:4px; height:4px; border-radius:50%; background:var(--gold); }
   .process-line::before { left:0; } .process-line::after { right:0; }
   .checklist { height:333px; }
-  .checklist-grid { height:333px; display:grid; grid-template-columns:48% 52%; }
+  .checklist-grid { width:min(calc(100% - 30px),718px); height:333px; margin-inline:auto; display:grid; grid-template-columns:48% 52%; }
   .checklist-image { overflow:hidden; }
   .checklist-image img { width:100%; height:100%; object-fit:cover; transform:scale(1.035); filter:brightness(.78) saturate(.72) sepia(.06); }
   .checklist-copy { padding:15px 31px 10px 38px; }
