@@ -17,6 +17,7 @@
     "@astrojs/vercel": "^10.0.7",
     "@fontsource/fraunces": "^5.2.9",
     "@fontsource/inter": "^5.2.8",
+    "@lucide/astro": "^1.28.0",
     "@tailwindcss/vite": "^4.3.0",
     "astro": "^6.3.5",
     "marked": "^18.0.4",
