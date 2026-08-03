@@ -5,7 +5,9 @@ import Footer from '@/components/Footer.astro';
 import type { SeoProps } from '@/lib/seo';
 import { buildTitle, SITE_URL, DEFAULT_OG } from '@/lib/seo';
 
-interface Props extends SeoProps {}
+interface Props extends SeoProps {
+  hideChrome?: boolean;
+}
 
 const {
   title,
@@ -13,6 +15,7 @@ const {
   canonical,
   ogImage = DEFAULT_OG,
   noIndex = false,
+  hideChrome = false,
 } = Astro.props;
 
 const canonicalURL = canonical
@@ -71,10 +74,10 @@ const siteJsonLd = {
     <slot name="head" />
   </head>
   <body class="min-h-screen flex flex-col" style="background: #0A0A0A;">
-    <Nav />
+    {!hideChrome && <Nav />}
     <main class="flex-1">
       <slot />
     </main>
-    <Footer />
+    {!hideChrome && <Footer />}
   </body>
 </html>
