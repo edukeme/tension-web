@@ -265,6 +265,9 @@ const journal = [
   .social { color:var(--gold); display:flex; align-items:center; gap:14px; }
   .social span,.social a { color:var(--gold); display:flex; }
   a:focus-visible,button:focus-visible { outline:1px solid var(--gold); outline-offset:4px; }
+  @media (min-width:681px) {
+    .hero>img { left:50%; right:auto; width:min(100%,810px); transform:translateX(-50%); }
+  }
   @media (max-width:680px) {
     .page-shell { width:min(calc(100% - 28px),718px); }
     .site-header nav { display:none; }
