@@ -12,7 +12,9 @@ The catalog currently exposes six paid offers plus the free checklist. The bundl
 
 | Catalog slug | Source manuscript |
 | --- | --- |
-| `21-scenes` | `materials/pdf_21-scenes.md` plus the three `pdf_7scenes-*` volumes |
+| `7-scenes-first-explorations` | `materials/pdf_7scenes-vol1-beginner.md` |
+| `7-scenes-deep-game` | `materials/pdf_7scenes-vol2-intermediate.md` |
+| `7-scenes-the-edge` | `materials/pdf_7scenes-vol3-advanced.md` |
 | `brat-playbook` | `materials/pdf_brat-playbook.md` |
 | `erotic-tales` | `materials/audio_erotic-tales-scripts.md` |
 | `negotiation-workbook` | `materials/pdf_negotiation-workbook.md` |

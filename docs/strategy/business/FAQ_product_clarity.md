@@ -1,5 +1,7 @@
 # Tension App — Frequently Asked Questions & Product Clarity
 
+> **Current-state note — August 3, 2026:** This document describes a future coaching-app concept. Tension's current offer is educational publishing: articles, checklists, workbooks, playbooks, and scene guides. See `docs/brand/COMMUNICATION.md` for active positioning.
+
 **Date:** May 10, 2026
 **Author:** Mr. D (with Paulo)
 

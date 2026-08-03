@@ -15,7 +15,11 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
-      filter: (page) => !page.includes('/api/') && !page.includes('/age-gate'),
+      filter: (page) =>
+        !page.includes('/api/') &&
+        !page.includes('/age-gate') &&
+        !page.includes('/review/') &&
+        !page.endsWith('/21-scenes/'),
     }),
   ],
 });

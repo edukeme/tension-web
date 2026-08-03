@@ -1,5 +1,7 @@
 # Tension App — Brand Name & Positioning Strategy
 
+> **Current-state note — August 3, 2026:** Tension is presently positioned as an educational publisher for couples. The coaching app described below is a future product concept, not the current public offer. The active communication system lives in `docs/brand/COMMUNICATION.md` and `docs/brand/BRAND-VOICE.md`.
+
 **Date:** May 10, 2026
 **Author:** Mr. D (with Paulo)
 

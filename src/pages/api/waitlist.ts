@@ -4,10 +4,12 @@ import { getResend, FROM_EMAIL, AUDIENCE_IDS, waitlistConfirmEmail } from '@/lib
 export const prerender = false;
 
 const PRODUCT_TITLES: Record<string, string> = {
-  '21-scenes':            '21 Scenes That Will Drive You Crazy',
-  'brat-playbook':        'The Brat Submissive Playbook',
+  '7-scenes-first-explorations': '7 Beginner D/s Scenes: First Explorations',
+  '7-scenes-deep-game':   '7 Intermediate D/s Scenes: The Deep Game',
+  '7-scenes-the-edge':    '7 Advanced D/s Scenes: The Edge',
+  'brat-playbook':        'The Brat Dynamics Playbook',
   'verbal-arsenal':       'The Verbal Arsenal',
-  'negotiation-workbook': 'The Negotiation Workbook',
+  'negotiation-workbook': 'The Kink Conversation Workbook',
   'erotic-tales':         '10 Erotic Tales for Couples',
   'bundle':               'The D/s Mastery Collection',
 };
