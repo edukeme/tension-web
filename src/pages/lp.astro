@@ -3,221 +3,247 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import EmailCaptureForm from '@/components/EmailCaptureForm.astro';
 import { getCollection } from 'astro:content';
 
-const allProducts = await getCollection('products');
-const featuredSlugs = ['negotiation-workbook', '21-scenes', 'brat-playbook'];
-const featuredProducts = featuredSlugs
-  .map(slug => allProducts.find(product => product.data.slug === slug))
-  .filter(Boolean);
-
 export const prerender = true;
+
+const allProducts = await getCollection('products');
+const product = (slug: string) => allProducts.find(item => item.data.slug === slug);
+const guides = [
+  {
+    slug: 'verbal-arsenal',
+    label: 'The Language Field Guide',
+    subline: 'Speak clearly. Listen deeply.',
+    description: 'Practical language for better conversations, direction, and repair.',
+    image: '/images/lp-hero-editorial.png',
+  },
+  {
+    slug: '21-scenes',
+    label: 'The Rituals Playbook',
+    subline: 'Small rituals. Big results.',
+    description: 'Scene blueprints and structures that make trust easier to practice.',
+    image: '/images/lp-hero-structure.png',
+  },
+  {
+    slug: 'negotiation-workbook',
+    label: 'The Intimacy Workbook',
+    subline: 'Explore with care.',
+    description: 'Guided exercises for desire, boundaries, agreements, and pleasure.',
+    image: '/images/tension_products.png',
+  },
+].map(guide => ({ ...guide, product: product(guide.slug) }));
 ---
 
 <BaseLayout
-  title="Intentional Intimacy, by Design"
-  description="Tension gives couples and singles the language, structure, and consent-first tools to explore power dynamics with care."
+  title="The Relationship Behind the Scene"
+  description="Tension gives couples and singles the language, structure, and consent-first tools to explore intentional intimacy with care."
   canonical="/lp/"
 >
-  <main class="lp-shell">
-    <section class="lp-hero">
-      <img
-        src="/images/lp-hero-editorial.png"
-        alt="Two adults sitting together with a notebook during a private conversation"
-        class="lp-hero-image"
-      />
-      <div class="lp-hero-overlay"></div>
-      <div class="lp-container lp-hero-content">
-        <p class="lp-eyebrow">Tension · intentional intimacy</p>
-        <h1>The relationship behind the scene.</h1>
-        <p class="lp-lede">
-          For couples and singles who want more intention, more language, and more trust in the way they explore.
-        </p>
-        <div class="lp-actions">
-          <a class="lp-button lp-button-primary" href="#start">Get the free couples checklist <span aria-hidden="true">→</span></a>
-          <a class="lp-button lp-button-quiet" href="#how-it-works">See how Tension works</a>
+  <main class="lp-new">
+    <nav class="lp-nav" aria-label="Landing page navigation">
+      <div class="lp-wrap lp-nav-inner">
+        <a class="lp-brand" href="/">TENSION</a>
+        <div class="lp-nav-links">
+          <a href="/about/">About</a>
+          <a href="#approach">Approach</a>
+          <a href="#guides">Tools</a>
+          <a href="#guides">Guides</a>
+          <a href="/blog/">Journal</a>
         </div>
-        <p class="lp-note">Private by default · Consent-first · Written for adults</p>
+        <a class="lp-nav-cta" href="#checklist">Get the checklist</a>
+      </div>
+    </nav>
+
+    <section class="lp-new-hero">
+      <img src="/images/lp-hero-editorial.png" alt="Two adults sharing a private, quiet conversation" />
+      <div class="lp-new-hero-shade"></div>
+      <div class="lp-wrap lp-new-hero-copy">
+        <p class="lp-kicker">Tension</p>
+        <h1>The relationship<br /><em>behind the scene.</em></h1>
+        <p class="lp-hero-sub">More <strong>intention.</strong> More <strong>language.</strong> More <strong>trust.</strong></p>
+        <div class="lp-new-actions">
+          <a class="lp-red-button" href="#checklist">Get the free checklist <span aria-hidden="true">→</span></a>
+          <a class="lp-gold-link" href="#approach">See how it works <span aria-hidden="true">→</span></a>
+        </div>
+        <p class="lp-microcopy">Private by default <span>•</span> Consent-first <span>•</span> Written for adults</p>
       </div>
     </section>
 
-    <section class="lp-proof" aria-label="Tension principles">
-      <div class="lp-container lp-proof-grid">
-        <div><strong>Language</strong><span>Say what you want without making it weird.</span></div>
-        <div><strong>Structure</strong><span>Turn a fantasy into a conversation and a plan.</span></div>
-        <div><strong>Care</strong><span>Keep consent, limits, and aftercare in the frame.</span></div>
+    <section class="lp-principles" aria-label="Tension principles">
+      <div class="lp-wrap lp-principle-grid">
+        <article><div class="lp-line-icon" aria-hidden="true">▢</div><h2>Language</h2><em>Find the words.</em><p>Name what matters. Speak clearly. Listen deeply.</p></article>
+        <article><div class="lp-line-icon" aria-hidden="true">▦</div><h2>Structure</h2><em>Build the frame.</em><p>Create rituals and agreements that hold in real life.</p></article>
+        <article><div class="lp-line-icon" aria-hidden="true">♡</div><h2>Care</h2><em>Explore with care.</em><p>Move at a pace that feels safe, curious, and connected.</p></article>
       </div>
     </section>
 
-    <section id="how-it-works" class="lp-section lp-section-light">
-      <div class="lp-container lp-two-col">
+    <section id="approach" class="lp-approach">
+      <div class="lp-wrap">
+        <p class="lp-section-label">Our approach</p>
+        <h2>A clearer conversation<br /><em>starts here.</em></h2>
+        <span class="lp-diamond" aria-hidden="true">◆</span>
+        <p class="lp-section-intro">Tools for the relationship you are building.</p>
+        <div class="lp-how-grid">
+          <article><span>1</span><div><h3>Learn</h3><p>Short, focused guides that teach what works.</p></div></article>
+          <div class="lp-arrow" aria-hidden="true">→</div>
+          <article><span>2</span><div><h3>Practice</h3><p>Conversation prompts and exercises you can use.</p></div></article>
+          <div class="lp-arrow" aria-hidden="true">→</div>
+          <article><span>3</span><div><h3>Apply</h3><p>Build habits that create more trust and ease.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="checklist" class="lp-checklist">
+      <div class="lp-wrap lp-checklist-card">
         <div>
-          <p class="lp-eyebrow lp-eyebrow-dark">A better starting point</p>
-          <h2>You do not need a new identity. You need a clearer conversation.</h2>
-        </div>
-        <div class="lp-copy">
-          <p>Most people find Tension after the search results, the awkward half-conversation, or the moment one partner says: “I want to try something, but I do not know how.”</p>
-          <p>Start with the relationship you already have. Explore at the pace that fits your life. Keep what creates connection; leave what does not.</p>
-        </div>
-      </div>
-      <div class="lp-container lp-steps">
-        <article><span>01</span><h3>Find the words</h3><p>Use plain-language prompts to name desire, curiosity, limits, and uncertainty.</p></article>
-        <article><span>02</span><h3>Build the frame</h3><p>Choose the level of structure, roles, rituals, and safety tools that work for you.</p></article>
-        <article><span>03</span><h3>Explore with care</h3><p>Plan a first experiment, keep checking in, and make room for what happens afterward.</p></article>
-      </div>
-    </section>
-
-    <section id="start" class="lp-start">
-      <div class="lp-container lp-start-grid">
-        <div>
-          <p class="lp-eyebrow">Start with one honest conversation</p>
-          <h2>The Couples Kink Discovery Checklist</h2>
-          <p class="lp-lede">90 activities across seven categories, with five answers that make “maybe” safe to say.</p>
-          <ul class="lp-list">
-            <li>Complete it together, not as a test of compatibility.</li>
-            <li>Separate curiosity from commitment.</li>
-            <li>Use your overlap as a starting point, not a score.</li>
+          <p class="lp-section-label">Free resource</p>
+          <h2>The Couples Checklist</h2>
+          <em>Start with one honest conversation.</em>
+          <ul>
+            <li>10 conversation starters</li>
+            <li>Consent and comfort guide</li>
+            <li>Rituals that strengthen connection</li>
+            <li>A simple weekly check-in</li>
           </ul>
         </div>
-        <div class="lp-form-card">
-          <p class="lp-form-kicker">Free resource</p>
-          <h3>Get the checklist privately.</h3>
-          <p>No public profile. No sales call. Just the PDF and a useful place to begin.</p>
-          <EmailCaptureForm buttonLabel="Send me the checklist →" />
-          <small>We will only email the address you provide. Unsubscribe anytime.</small>
-        </div>
+        <div class="lp-checklist-stat"><strong>90</strong><span>SECONDS</span><em>That can change<br />your next talk.</em></div>
+        <div class="lp-checklist-form"><EmailCaptureForm buttonLabel="Get the checklist →" /><small>No spam. Unsubscribe anytime.</small></div>
       </div>
     </section>
 
-    <section class="lp-section lp-section-dark">
-      <div class="lp-container">
-        <div class="lp-section-heading">
-          <div><p class="lp-eyebrow">Go deeper when you are ready</p><h2>Tools for the dynamic you are building.</h2></div>
-          <a href="/#products" class="lp-text-link">Browse all resources <span aria-hidden="true">→</span></a>
-        </div>
-        <div class="lp-products">
-          {featuredProducts.map(product => product && (
-            <a class="lp-product" href={`/${product.data.slug}/`}>
-              <span class="lp-product-price">{product.data.price_eur ? `€${product.data.price_eur.toFixed(2)}` : 'Free'}</span>
-              <h3>{product.data.title}</h3>
-              <p>{product.data.tagline}</p>
-              <span class="lp-product-link">View resource <span aria-hidden="true">→</span></span>
+    <section id="guides" class="lp-guides">
+      <div class="lp-wrap">
+        <p class="lp-section-label">Guides</p>
+        <div class="lp-guide-grid">
+          {guides.map(guide => (
+            <a class="lp-guide-card" href={`/${guide.slug}/`}>
+              <img src={guide.image} alt="" loading="lazy" />
+              <div class="lp-guide-shade"></div>
+              <div class="lp-guide-copy">
+                <h2>{guide.label}</h2>
+                <em>{guide.subline}</em>
+                <p>{guide.description}</p>
+                <span>Learn more <span aria-hidden="true">→</span></span>
+              </div>
             </a>
           ))}
         </div>
       </div>
     </section>
 
-    <section class="lp-variations" aria-labelledby="visual-directions">
-      <div class="lp-container">
-        <p class="lp-eyebrow lp-eyebrow-dark">Visual direction</p>
-        <h2 id="visual-directions">Two ways to make the first impression.</h2>
-        <p class="lp-variation-intro">The LP currently uses Variation A. Variation B is ready if you want the brand to feel more architectural and symbolic.</p>
-        <div class="lp-variation-grid">
-          <figure class="lp-variation lp-variation-selected">
-            <img src="/images/lp-hero-editorial.png" alt="Editorial variation: two adults sharing a private conversation with a notebook" loading="lazy" />
-            <figcaption><strong>A · Editorial intimacy</strong><span>Human, warm, relationship-first. Best for leading with trust and emotional safety.</span><em>Current LP hero</em></figcaption>
-          </figure>
-          <figure class="lp-variation">
-            <img src="/images/lp-hero-structure.png" alt="Abstract variation: cream card, burgundy thread, and black stone on a dark surface" loading="lazy" />
-            <figcaption><strong>B · Tactile structure</strong><span>Abstract, private, symbolic. Best for leading with design, rituals, and chosen power.</span><em>Alternate direction</em></figcaption>
-          </figure>
+    <section class="lp-direction">
+      <div class="lp-wrap">
+        <p class="lp-section-label">Our editorial direction</p>
+        <div class="lp-direction-grid">
+          <a href="/blog/" class="lp-direction-card"><img src="/images/lp-hero-editorial.png" alt="Editorial intimacy: a couple in a quiet private moment" loading="lazy" /><span><strong>Editorial intimacy</strong><em>Real moments. Human stories.</em></span></a>
+          <a href="/blog/topic/tools-guides/" class="lp-direction-card"><img src="/images/lp-hero-structure.png" alt="Tactile structure: a card, thread, and stone on a dark surface" loading="lazy" /><span><strong>Tactile structure</strong><em>Beautiful tools. Clear guidance.</em></span></a>
         </div>
       </div>
     </section>
 
-    <section class="lp-final">
-      <div class="lp-container lp-final-inner">
-        <p class="lp-eyebrow">You can start without knowing the label.</p>
-        <h2>You only need a next conversation.</h2>
-        <a class="lp-button lp-button-primary" href="#start">Get the free checklist <span aria-hidden="true">→</span></a>
-      </div>
+    <section class="lp-new-final">
+      <div class="lp-wrap"><h2>You only need<br /><em>a next conversation.</em></h2><a class="lp-red-button" href="#checklist">Get the free checklist <span aria-hidden="true">→</span></a><p class="lp-microcopy">Private by default <span>•</span> Consent-first <span>•</span> Written for adults</p></div>
     </section>
   </main>
 </BaseLayout>
 
 <style>
-  .lp-shell { background: #0a0a0c; color: #f4f0e8; }
-  .lp-container { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
-  .lp-hero { position: relative; min-height: min(780px, 88vh); display: flex; align-items: center; overflow: hidden; }
-  .lp-hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
-  .lp-hero-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(7,7,9,.98) 0%, rgba(7,7,9,.82) 38%, rgba(7,7,9,.22) 78%, rgba(7,7,9,.5) 100%), linear-gradient(0deg, rgba(7,7,9,.9), transparent 35%); }
-  .lp-hero-content { position: relative; z-index: 1; padding-block: 150px 100px; max-width: 1120px; }
-  .lp-eyebrow { color: #d4213d; font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
-  .lp-eyebrow-dark { color: #9e2238; }
-  .lp-hero h1 { font-family: var(--font-serif); font-size: clamp(3.4rem, 8vw, 7.2rem); line-height: .94; letter-spacing: -.045em; max-width: 10ch; margin: 24px 0; }
-  .lp-lede { color: #d2d0ce; font-size: clamp(1.05rem, 2vw, 1.35rem); line-height: 1.65; max-width: 43ch; }
-  .lp-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 38px; }
-  .lp-button { display: inline-flex; align-items: center; gap: 12px; padding: 15px 21px; border-radius: 999px; font-size: 13px; font-weight: 700; transition: transform .2s, background .2s, border-color .2s; }
-  .lp-button:hover { transform: translateY(-2px); }
-  .lp-button-primary { color: #160b0d; background: #f5f0e6; }
-  .lp-button-primary:hover { background: #fff; }
-  .lp-button-quiet { color: #eee; border: 1px solid rgba(255,255,255,.3); background: rgba(0,0,0,.2); }
-  .lp-button-quiet:hover { border-color: rgba(255,255,255,.7); background: rgba(255,255,255,.08); }
-  .lp-note { margin-top: 20px; color: #8e8d90; font-size: 12px; }
-  .lp-proof { background: #18181c; border-block: 1px solid rgba(255,255,255,.1); }
-  .lp-proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
-  .lp-proof-grid div { display: flex; flex-direction: column; gap: 7px; padding: 25px 28px; border-right: 1px solid rgba(255,255,255,.1); }
-  .lp-proof-grid div:last-child { border-right: 0; }
-  .lp-proof strong { font-family: var(--font-serif); font-size: 20px; }
-  .lp-proof span { color: #a9a7a5; font-size: 13px; line-height: 1.5; }
-  .lp-section { padding-block: 110px; }
-  .lp-section-light, .lp-variations { color: #242126; background: #f1ece3; }
-  .lp-section-dark { background: #0e0e11; }
-  .lp-two-col { display: grid; grid-template-columns: 1.05fr .95fr; gap: 90px; align-items: start; }
-  .lp-section h2, .lp-start h2, .lp-final h2, .lp-variations h2 { font-family: var(--font-serif); font-size: clamp(2.4rem, 5vw, 4.5rem); line-height: 1; letter-spacing: -.035em; margin: 18px 0; }
-  .lp-section-light h2, .lp-variations h2 { color: #201e22; }
-  .lp-copy { color: #625e59; font-size: 17px; line-height: 1.75; }
-  .lp-copy p + p { margin-top: 18px; }
-  .lp-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 70px; }
-  .lp-steps article { padding: 28px; border-top: 1px solid #c9c0b4; }
-  .lp-steps span { color: #a3263d; font-size: 12px; font-weight: 800; letter-spacing: .15em; }
-  .lp-steps h3 { color: #201e22; font-family: var(--font-serif); font-size: 25px; margin: 26px 0 9px; }
-  .lp-steps p { color: #706a64; line-height: 1.65; font-size: 14px; }
-  .lp-start { padding-block: 105px; background: #24151a; }
-  .lp-start-grid { display: grid; grid-template-columns: 1fr .85fr; gap: 100px; align-items: center; }
-  .lp-start h2 { color: #f7f2e8; max-width: 10ch; }
-  .lp-start .lp-lede { color: #d7cfc8; }
-  .lp-list { display: grid; gap: 13px; margin-top: 30px; color: #ded4ce; font-size: 14px; }
-  .lp-list li { display: flex; gap: 12px; }
-  .lp-list li::before { content: '—'; color: #d4213d; }
-  .lp-form-card { padding: 38px; border: 1px solid rgba(255,255,255,.15); background: rgba(255,255,255,.06); }
-  .lp-form-kicker { color: #d4213d; font-size: 10px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; }
-  .lp-form-card h3 { font-family: var(--font-serif); font-size: 30px; margin: 14px 0 8px; }
-  .lp-form-card > p { color: #bcb0ab; line-height: 1.6; font-size: 14px; margin-bottom: 25px; }
-  .lp-form-card small { display: block; color: #8f8583; font-size: 11px; line-height: 1.5; margin-top: 13px; }
-  .lp-section-heading { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 45px; }
-  .lp-section-heading h2 { color: #f4f0e8; max-width: 12ch; }
-  .lp-text-link { color: #d4213d; font-size: 13px; font-weight: 700; white-space: nowrap; }
-  .lp-products { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-  .lp-product { display: flex; flex-direction: column; min-height: 285px; padding: 28px; color: #f4f0e8; background: #19191d; border: 1px solid rgba(255,255,255,.1); transition: transform .2s, border-color .2s; }
-  .lp-product:hover { transform: translateY(-4px); border-color: rgba(212,33,61,.7); }
-  .lp-product-price { color: #d4213d; font-size: 12px; font-weight: 800; letter-spacing: .12em; }
-  .lp-product h3 { font-family: var(--font-serif); font-size: 27px; line-height: 1.05; margin: 36px 0 13px; }
-  .lp-product p { color: #aaa7a6; line-height: 1.6; font-size: 14px; }
-  .lp-product-link { margin-top: auto; padding-top: 25px; color: #eee; font-size: 12px; font-weight: 700; }
-  .lp-variations { padding-block: 105px; }
-  .lp-variation-intro { max-width: 55ch; color: #6b655e; line-height: 1.65; }
-  .lp-variation-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 45px; }
-  .lp-variation { margin: 0; border: 1px solid #d0c7bb; background: #e8e1d7; }
-  .lp-variation-selected { border-color: #9e2238; box-shadow: 0 0 0 2px rgba(158,34,56,.12); }
-  .lp-variation img { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; }
-  .lp-variation figcaption { display: grid; gap: 7px; padding: 21px; }
-  .lp-variation strong { font-family: var(--font-serif); font-size: 22px; }
-  .lp-variation span { color: #716a63; font-size: 13px; line-height: 1.5; }
-  .lp-variation em { color: #9e2238; font-size: 10px; font-style: normal; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
-  .lp-final { padding-block: 105px; background: #08080a; text-align: center; }
-  .lp-final-inner { display: flex; flex-direction: column; align-items: center; }
-  .lp-final h2 { color: #f4f0e8; max-width: 11ch; }
+  .lp-new { --gold: #c89219; --gold-bright: #e0a92d; --red: #a31318; --black: #050505; background: var(--black); color: #f5f0e6; min-height: 100vh; }
+  .lp-wrap { width: min(1160px, calc(100% - 56px)); margin-inline: auto; }
+  .lp-nav { position: absolute; inset: 0 0 auto; z-index: 5; border-bottom: 1px solid rgba(255,255,255,.05); background: rgba(0,0,0,.35); }
+  .lp-nav-inner { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .lp-brand { color: var(--gold-bright); font-family: var(--font-serif); letter-spacing: .25em; font-size: 17px; }
+  .lp-nav-links { display: flex; gap: 31px; margin-left: auto; }
+  .lp-nav-links a { color: rgba(245,240,230,.82); font-size: 10px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+  .lp-nav-links a:hover, .lp-gold-link:hover { color: var(--gold-bright); }
+  .lp-nav-cta, .lp-red-button { background: var(--red); color: #fff6e8; font-size: 10px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+  .lp-nav-cta { padding: 14px 24px; }
+  .lp-red-button { display: inline-flex; align-items: center; gap: 15px; padding: 16px 23px; }
+  .lp-red-button:hover { background: #c01820; }
+  .lp-new-hero { position: relative; min-height: 720px; display: flex; align-items: center; overflow: hidden; }
+  .lp-new-hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+  .lp-new-hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.9), rgba(0,0,0,.38) 62%, rgba(0,0,0,.55)), linear-gradient(0deg, rgba(0,0,0,.92), transparent 38%); }
+  .lp-new-hero-copy { position: relative; z-index: 1; padding-top: 80px; }
+  .lp-kicker, .lp-section-label { color: var(--gold-bright); font-size: 10px; font-weight: 800; letter-spacing: .25em; text-transform: uppercase; }
+  .lp-new-hero h1 { font-family: var(--font-serif); font-size: clamp(3.5rem, 7.4vw, 7rem); line-height: .92; letter-spacing: -.045em; margin: 25px 0 22px; max-width: 9ch; }
+  .lp-new em { color: var(--gold-bright); font-family: var(--font-serif); font-weight: 400; }
+  .lp-hero-sub { font-family: var(--font-serif); font-size: clamp(1.15rem, 2vw, 1.5rem); color: #e1d8c9; }
+  .lp-hero-sub strong { color: var(--gold-bright); font-style: italic; font-weight: 400; }
+  .lp-new-actions { display: flex; align-items: center; gap: 23px; margin-top: 37px; }
+  .lp-gold-link { color: var(--gold-bright); font-size: 10px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+  .lp-microcopy { color: rgba(245,240,230,.62); font-size: 9px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; margin-top: 33px; }
+  .lp-microcopy span { color: var(--gold); padding: 0 8px; }
+  .lp-principles { border-block: 1px solid rgba(200,146,25,.48); }
+  .lp-principle-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .lp-principle-grid article { padding: 48px 52px 50px; text-align: center; border-right: 1px solid rgba(200,146,25,.45); }
+  .lp-principle-grid article:last-child { border-right: 0; }
+  .lp-line-icon { color: var(--gold-bright); font-size: 38px; line-height: 1; margin-bottom: 16px; }
+  .lp-principle-grid h2 { font-family: var(--font-serif); font-size: 24px; margin-bottom: 4px; }
+  .lp-principle-grid em { font-size: 15px; }
+  .lp-principle-grid p { max-width: 185px; color: #aaa19a; font-family: var(--font-serif); font-size: 14px; line-height: 1.45; margin: 15px auto 0; }
+  .lp-approach { padding: 94px 0 88px; text-align: center; }
+  .lp-approach h2 { font-family: var(--font-serif); font-size: clamp(2.6rem, 5vw, 4.7rem); line-height: .98; margin: 18px 0 20px; }
+  .lp-diamond { color: var(--gold); font-size: 9px; display: block; }
+  .lp-section-intro { color: #a9a09a; font-family: var(--font-serif); font-size: 16px; margin-top: 14px; }
+  .lp-how-grid { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; align-items: center; gap: 20px; margin-top: 65px; text-align: left; }
+  .lp-how-grid article { display: flex; align-items: start; gap: 20px; }
+  .lp-how-grid article > span { color: var(--gold-bright); font-family: var(--font-serif); font-size: 48px; line-height: .8; }
+  .lp-how-grid h3 { font-family: var(--font-serif); font-size: 21px; margin-bottom: 7px; }
+  .lp-how-grid p { color: #aaa19a; font-family: var(--font-serif); font-size: 13px; line-height: 1.5; }
+  .lp-arrow { color: var(--gold); font-size: 27px; }
+  .lp-checklist { padding: 0 0 84px; }
+  .lp-checklist-card { display: grid; grid-template-columns: 1.15fr .7fr 1fr; align-items: center; gap: 35px; border: 1px solid rgba(200,146,25,.75); padding: 38px 45px; }
+  .lp-checklist-card h2 { font-family: var(--font-serif); font-size: 28px; margin: 13px 0 2px; }
+  .lp-checklist-card > div:first-child em { font-size: 15px; }
+  .lp-checklist-card ul { display: grid; gap: 8px; margin-top: 22px; color: #c2b8ac; font-family: var(--font-serif); font-size: 13px; }
+  .lp-checklist-card li::before { content: '✓'; color: var(--gold-bright); margin-right: 9px; }
+  .lp-checklist-stat { text-align: center; }
+  .lp-checklist-stat strong { display: block; color: var(--gold-bright); font-family: var(--font-serif); font-size: 84px; font-weight: 400; line-height: .85; }
+  .lp-checklist-stat span { color: var(--gold-bright); font-size: 14px; letter-spacing: .3em; }
+  .lp-checklist-stat em { display: block; margin-top: 16px; font-size: 15px; line-height: 1.25; }
+  .lp-checklist-form :global(#email-capture-form) { max-width: none; }
+  .lp-checklist-form :global(#email-capture-form input) { background: transparent !important; border: 1px solid rgba(200,146,25,.7) !important; border-right: 1px solid rgba(200,146,25,.7) !important; color: #f5f0e6 !important; }
+  .lp-checklist-form :global(#email-capture-form button) { background: var(--red) !important; border-color: var(--red) !important; }
+  .lp-checklist-form small { display: block; color: #888078; font-family: var(--font-serif); font-size: 12px; margin-top: 11px; text-align: center; }
+  .lp-guides { padding: 0 0 90px; }
+  .lp-guides > .lp-wrap > .lp-section-label, .lp-direction .lp-section-label { text-align: center; margin-bottom: 22px; }
+  .lp-guide-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .lp-guide-card { position: relative; min-height: 330px; overflow: hidden; border: 1px solid rgba(200,146,25,.75); }
+  .lp-guide-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(.6) sepia(.25) brightness(.53); transition: transform .5s; }
+  .lp-guide-card:hover img { transform: scale(1.04); }
+  .lp-guide-shade { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,.97), rgba(0,0,0,.16) 78%); }
+  .lp-guide-copy { position: absolute; inset: auto 24px 24px; }
+  .lp-guide-copy h2 { font-family: var(--font-serif); font-size: 24px; margin-bottom: 4px; }
+  .lp-guide-copy em { font-size: 14px; }
+  .lp-guide-copy p { color: #c4bbb0; font-family: var(--font-serif); font-size: 13px; line-height: 1.45; margin: 13px 0 18px; }
+  .lp-guide-copy > span { color: var(--gold-bright); font-size: 10px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+  .lp-direction { padding: 0 0 86px; }
+  .lp-direction-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .lp-direction-card { position: relative; min-height: 220px; overflow: hidden; border: 1px solid rgba(200,146,25,.75); }
+  .lp-direction-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: sepia(.2) brightness(.48); }
+  .lp-direction-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,.9), rgba(0,0,0,.06)); }
+  .lp-direction-card > span { position: absolute; z-index: 1; left: 28px; bottom: 25px; display: grid; gap: 3px; }
+  .lp-direction-card strong { font-family: var(--font-serif); font-size: 23px; }
+  .lp-direction-card em { font-size: 14px; }
+  .lp-new-final { border-top: 1px solid rgba(200,146,25,.3); padding: 83px 0 72px; text-align: center; }
+  .lp-new-final h2 { font-family: var(--font-serif); font-size: clamp(2.7rem, 5vw, 4.3rem); line-height: .95; margin-bottom: 30px; }
+  .lp-new-final .lp-microcopy { margin-top: 27px; }
   @media (max-width: 760px) {
-    .lp-container { width: min(100% - 36px, 1120px); }
-    .lp-hero { min-height: 730px; align-items: end; }
-    .lp-hero-overlay { background: linear-gradient(0deg, rgba(7,7,9,.98) 5%, rgba(7,7,9,.65) 57%, rgba(7,7,9,.2) 100%); }
-    .lp-hero-content { padding-block: 70px 55px; }
-    .lp-proof-grid, .lp-two-col, .lp-start-grid, .lp-steps, .lp-products, .lp-variation-grid { grid-template-columns: 1fr; }
-    .lp-proof-grid div { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.1); }
-    .lp-proof-grid div:last-child { border-bottom: 0; }
-    .lp-two-col, .lp-start-grid { gap: 38px; }
-    .lp-section-heading { align-items: start; flex-direction: column; }
-    .lp-section { padding-block: 75px; }
-    .lp-start, .lp-variations, .lp-final { padding-block: 75px; }
+    .lp-wrap { width: min(100% - 36px, 1160px); }
+    .lp-nav-inner { min-height: 64px; }
+    .lp-nav-links { display: none; }
+    .lp-nav-cta { padding: 12px 14px; font-size: 9px; }
+    .lp-new-hero { min-height: 690px; align-items: end; }
+    .lp-new-hero-copy { padding-bottom: 58px; }
+    .lp-new-hero-shade { background: linear-gradient(0deg, rgba(0,0,0,.97), rgba(0,0,0,.55) 62%, rgba(0,0,0,.2)); }
+    .lp-new-hero h1 { font-size: clamp(3.2rem, 14vw, 5rem); }
+    .lp-new-actions { align-items: start; flex-direction: column; gap: 22px; }
+    .lp-principle-grid, .lp-guide-grid, .lp-direction-grid { grid-template-columns: 1fr; }
+    .lp-principle-grid article { border-right: 0; border-bottom: 1px solid rgba(200,146,25,.45); }
+    .lp-principle-grid article:last-child { border-bottom: 0; }
+    .lp-how-grid { grid-template-columns: 1fr; gap: 25px; }
+    .lp-arrow { transform: rotate(90deg); margin-left: 23px; }
+    .lp-checklist-card { grid-template-columns: 1fr; padding: 29px 24px; text-align: center; }
+    .lp-checklist-card ul { text-align: left; width: max-content; max-width: 100%; margin-inline: auto; }
+    .lp-checklist-form :global(#email-capture-form > div) { flex-direction: column; gap: 9px; }
+    .lp-checklist-form :global(#email-capture-form input) { border-right: 1px solid rgba(200,146,25,.7) !important; }
   }
 </style>
