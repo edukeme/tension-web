@@ -1,197 +1,89 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import Hero from '@/components/Hero.astro';
-import ProductCard from '@/components/ProductCard.astro';
 import EmailCaptureForm from '@/components/EmailCaptureForm.astro';
 import { getCollection } from 'astro:content';
 
-const allProducts = await getCollection('products');
-const ORDER = ['bundle', '21-scenes', 'brat-playbook', 'verbal-arsenal', 'negotiation-workbook', 'erotic-tales', 'free-checklist'];
-const products = ORDER.map(slug => allProducts.find(p => p.data.slug === slug)).filter(Boolean);
+export const prerender = true;
+
+const products = await getCollection('products');
+const productBySlug = (slug: string) => products.find(product => product.data.slug === slug);
+const guides = [
+  { slug: 'negotiation-workbook', title: 'The Negotiation Workbook', description: 'An 8-section fill-in workbook. From “we’ve been thinking about this” to a real D/s structure in one sitting.', price: '€9.90', image: '/images/lp/tension-guide-negotiation.png', label: 'Conversation' },
+  { slug: '21-scenes', title: '21 Scenes That Will Drive You Crazy', description: '21 ready-to-run scene blueprints — beginner to advanced, with dialogue and aftercare.', price: '€9.90', image: '/images/lp/tension-guide-scenes.png', label: 'Practice' },
+  { slug: 'brat-playbook', title: 'The Brat Submissive Playbook', description: 'The complete brat dynamics guide — for dominants who need to win, and submissives who need to be understood.', price: '€14.90', image: '/images/lp/tension-guide-brat.png', label: 'Dynamics' },
+].map(guide => ({ ...guide, product: productBySlug(guide.slug) }));
 ---
 
-<BaseLayout
-  title="Intentional Intimacy Coaching for Couples"
-  description="Tension is private coaching for couples exploring power dynamics and intentional intimacy. Resources, guides, and tools designed for the relationship behind closed doors."
->
-  <Hero
-    headline="Intimacy, by design."
-    subhead="Coaching for the relationship behind closed doors — the trust, the communication, the structure that makes intentional intimacy work."
-    ctaLabel="Get the Free Couples Checklist"
-    ctaHref="/free-checklist"
-    secondaryLabel="See all resources"
-    secondaryHref="#products"
-  />
+<BaseLayout title="Intentional Intimacy Coaching for Couples" description="Tension gives couples and singles the language, structure, and consent-first tools to explore power dynamics with care." canonical="/">
+  <main class="lp-dark">
+    <section class="tension-hero relative isolate min-h-[92svh] overflow-hidden bg-black">
+      <img src="/images/lp/tension-hero-couple.png" alt="Two adults sharing a quiet, affectionate moment together" class="absolute inset-0 h-full w-full object-cover object-center" />
+      <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,.28),rgba(0,0,0,.58)_55%,#000_100%)]"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_10%,rgba(0,0,0,.42)_100%)]"></div>
+      <div class="relative z-10 mx-auto flex min-h-[92svh] max-w-5xl items-center justify-center px-6 py-28 text-center"><div class="max-w-3xl">
+        <p class="eyebrow mb-7 text-[#C9952E]">Tension · intentional intimacy</p>
+        <h1 class="font-serif text-[clamp(3.1rem,8vw,7rem)] leading-[.92] tracking-[-.04em] text-[#F4F0E8]">The relationship<br /><em class="text-[#C9952E]">behind the scene.</em></h1>
+        <p class="mx-auto mt-8 max-w-2xl text-base leading-7 text-[#F4F0E8]/80 md:text-lg">For couples and singles who want more intention, more language, and more trust in the way they explore.</p>
+        <div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row"><a class="btn-primary" href="/free-checklist">Get the free couples checklist →</a><a class="btn-secondary" href="#how-it-works">See how Tension works</a></div>
+        <p class="mt-8 text-[10px] font-semibold uppercase tracking-[.24em] text-[#F4F0E8]/65">Private by default · Consent-first · Written for adults</p>
+      </div></div>
+    </section>
 
-  <!-- Value props (Bento Grid Style) -->
-  <section class="py-24 px-6 relative overflow-hidden" style="background: #33333A; border-top: 1px solid #474752; border-bottom: 1px solid #474752;">
-    <!-- Abstract subtle glow behind value props -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] opacity-20 pointer-events-none blur-[120px] rounded-full" style="background: radial-gradient(circle, #D4213D 0%, transparent 70%);"></div>
+    <section class="border-y border-[#C9952E]/50 bg-black" aria-label="Tension principles"><div class="mx-auto grid max-w-5xl grid-cols-1 md:grid-cols-3">
+      <article class="principle-card"><div class="gold-icon" aria-hidden="true">▢</div><h2>Language</h2><em>Say what you want without making it weird.</em></article>
+      <article class="principle-card"><div class="gold-icon" aria-hidden="true">▦</div><h2>Structure</h2><em>Turn a fantasy into a conversation and a plan.</em></article>
+      <article class="principle-card"><div class="gold-icon" aria-hidden="true">♡</div><h2>Care</h2><em>Keep consent, limits, and aftercare in the frame.</em></article>
+    </div></section>
 
-    <div class="max-w-5xl mx-auto relative z-10">
-      <div class="text-center mb-16">
-        <h2 class="font-serif font-medium text-3xl md:text-5xl text-white mb-6">Designed for privacy. Built for connection.</h2>
-        <p class="text-[#ECECEC] max-w-2xl mx-auto text-lg">A modern framework for power dynamics that respects the depth of the relationship behind it.</p>
-      </div>
+    <section class="bg-black px-6 py-28 text-center"><div class="mx-auto max-w-3xl"><p class="eyebrow text-[#A61E2D]">A better starting point</p><h2 class="section-title mt-5">You do not need a new identity. You need a clearer conversation.</h2><div class="gold-rule mx-auto my-9 max-w-xs"></div><div class="mx-auto max-w-2xl space-y-5 text-base leading-8 text-[#F4F0E8]/75"><p>Most people find Tension after the search results, the awkward half-conversation, or the moment one partner says: “I want to try something, but I do not know how.”</p><p>Start with the relationship you already have. Explore at the pace that fits your life. Keep what creates connection; leave what does not.</p></div></div></section>
 
-      <div class="grid md:grid-cols-3 gap-6">
-        {[
-          { num: '01', title: 'Structure', body: 'Frameworks and blueprints that turn intention into actual practice. Real dialogue, real steps.' },
-          { num: '02', title: 'Private', body: 'Everything is for you and your partner. No public profiles. No leaderboards. No one needs to know.' },
-          { num: '03', title: 'Grounded', body: 'Every resource is built on consent, safety, and emotional intelligence — not just heat.' },
-        ].map(({ num, title, body }) => (
-          <div class="p-8 rounded-3xl transition-transform hover:-translate-y-2 duration-500" style="background: #42424E; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 12px 36px rgba(0,0,0,0.45);">
-            <p class="font-serif font-medium mb-6 text-4xl" style="color: rgba(255,255,255,0.2);">{num}</p>
-            <h3 class="font-serif text-xl font-medium mb-3 text-white">{title}</h3>
-            <p class="text-[#FFFFFF] leading-relaxed font-light">{body}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+    <section id="how-it-works" class="bg-black px-6 pb-28"><div class="mx-auto max-w-5xl"><p class="eyebrow text-center text-[#A61E2D]">How it works</p><div class="how-rail mt-14"><article><span>01</span><div><h3>Find the words</h3><p>Use plain-language prompts to name desire, curiosity, limits, and uncertainty.</p></div></article><div class="rail-line" aria-hidden="true"></div><article><span>02</span><div><h3>Build the frame</h3><p>Choose the level of structure, roles, rituals, and safety tools that work for you.</p></div></article><div class="rail-line" aria-hidden="true"></div><article><span>03</span><div><h3>Explore with care</h3><p>Plan a first experiment, keep checking in, and make room for what happens afterward.</p></div></article></div></div></section>
 
-  <!-- Products grid -->
-  <section id="products" class="py-24 px-6 relative" style="background: #000000;">
-    <div class="max-w-5xl mx-auto">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
-        <div class="max-w-2xl">
-          <div class="flex items-center gap-3 mb-6">
-            <span class="block w-8 h-px" style="background: #D4213D;"></span>
-            <span class="text-xs font-semibold tracking-[0.2em] uppercase text-[#D4213D]">Resources</span>
-          </div>
-          <h2 class="font-serif font-medium leading-tight mb-4 text-white" style="font-size: clamp(2rem, 5vw, 3.5rem); letter-spacing: -0.02em;">
-            For the dynamic you're building
-          </h2>
-          <p class="text-lg text-[#D4D4D4] font-light">
-            Written by Mr. D from the perspective of someone who has actually done this.
-          </p>
-        </div>
-      </div>
-      
-      <!-- Feature Bundle with Generated Image -->
-      <div class="mb-6 rounded-3xl overflow-hidden relative group" style="background: #161619; border: 1px solid rgba(255,255,255,0.12);">
-        <div class="absolute inset-0 z-0">
-          <img src="/images/tension_products.png" alt="Tension Products Collection" class="w-full h-full object-cover opacity-40 mix-blend-lighten group-hover:opacity-50 transition-opacity duration-700" />
-          <div class="absolute inset-0 bg-gradient-to-r from-[#000] via-[#000]/80 to-transparent"></div>
-        </div>
-        <div class="relative z-10 p-10 md:p-16 max-w-xl">
-          <span class="inline-block font-semibold px-4 py-1.5 mb-6 tracking-[0.2em] uppercase rounded-full" style="background: rgba(212,33,61,0.2); color: #fff; font-size: 10px; border: 1px solid rgba(212,33,61,0.4);">
-            The Complete Collection
-          </span>
-          <h3 class="text-3xl md:text-4xl font-serif font-medium text-white mb-4">The D/s Mastery Bundle</h3>
-          <p class="text-[#ECECEC] mb-8 text-lg font-light leading-relaxed">Everything in one place. All 5 PDFs, the audio stories, exclusive bonus material, and early app access. The entire foundation for a dynamic that works.</p>
-          <a href="/bundle" class="inline-flex items-center gap-2 px-8 py-3 text-sm font-medium rounded-full bg-white text-black hover:bg-gray-200 transition-colors">
-            Get the Bundle →
-          </a>
-        </div>
-      </div>
+    <section id="checklist" class="bg-black px-6 pb-28"><div class="mx-auto grid max-w-5xl items-center gap-10 border border-[#C9952E]/80 p-8 md:grid-cols-[1.15fr_.55fr_1fr] md:p-12"><div><p class="eyebrow text-[#A61E2D]">Start with one honest conversation</p><h2 class="mt-4 font-serif text-3xl text-[#F4F0E8]">The Couples Kink Discovery Checklist</h2><p class="mt-2 font-serif text-lg italic text-[#C9952E]">90 activities across seven categories, with five answers that make “maybe” safe to say.</p><ul class="checklist-list mt-7"><li>Complete it together, not as a test of compatibility.</li><li>Separate curiosity from commitment.</li><li>Use your overlap as a starting point, not a score.</li></ul></div><div class="text-center"><strong class="block font-serif text-8xl font-normal leading-none text-[#C9952E]">90</strong><span class="text-sm font-semibold tracking-[.3em] text-[#C9952E]">SECONDS</span></div><div><h3 class="font-serif text-2xl text-[#F4F0E8]">Get the checklist privately.</h3><p class="mt-2 text-sm leading-6 text-[#F4F0E8]/70">No public profile. No sales call. Just the PDF and a useful place to begin.</p><div class="mt-6"><EmailCaptureForm buttonLabel="Send me the checklist →" /></div><small class="mt-3 block text-center text-xs text-[#F4F0E8]/55">We will only email the address you provide. Unsubscribe anytime.</small></div></div></section>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {products.filter(p => p?.data.slug !== 'bundle').map((p) => (
-          p && (
-            <ProductCard
-              title={p.data.title}
-              slug={p.data.slug}
-              price={p.data.price_eur}
-              tagline={p.data.tagline}
-              isFree={p.data.price_eur === null}
-              isBundle={false}
-            />
-          )
-        ))}
-      </div>
-    </div>
-  </section>
+    <section id="guides" class="bg-black px-6 pb-28"><div class="mx-auto max-w-5xl"><div class="mb-12 flex flex-col justify-between gap-5 md:flex-row md:items-end"><div><p class="eyebrow text-[#A61E2D]">Go deeper when you are ready</p><h2 class="section-title mt-5 max-w-xl">Tools for the dynamic you are building.</h2></div><a class="btn-secondary" href="/#products">Browse all resources →</a></div><div class="grid gap-5 md:grid-cols-3">{guides.map(guide => (<a class="guide-card" href={`/${guide.slug}/`}><img src={guide.image} alt="" loading="lazy" /><div class="guide-overlay"></div><div class="relative z-10 flex h-full flex-col justify-end p-6"><p class="eyebrow text-[#A61E2D]">{guide.label}</p><h3 class="mt-3 font-serif text-2xl text-[#F4F0E8]">{guide.title}</h3><p class="mt-3 text-sm leading-6 text-[#F4F0E8]/75">{guide.description}</p><p class="mt-6 flex justify-between border-t border-[#C9952E]/50 pt-4 text-sm font-semibold text-[#C9952E]"><span>{guide.price}</span><span>Learn more →</span></p></div></a>))}</div></div></section>
 
-  <!-- Lead magnet -->
-  <section class="py-32 px-6 relative overflow-hidden" style="background: #3A3A48; border-top: 1px solid #4E4E62; border-bottom: 1px solid #4E4E62;">
-    <!-- Abstract blurred orb -->
-    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-[#D4213D] opacity-5 rounded-full blur-[150px] translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
+    <section class="bg-black px-6 pb-28"><div class="mx-auto max-w-5xl"><p class="eyebrow mb-6 text-center text-[#A61E2D]">Visual direction</p><h2 class="section-title text-center">Two ways to make the first impression.</h2><p class="mx-auto mt-5 max-w-2xl text-center text-[#F4F0E8]/70">The LP currently uses Variation A. Variation B is ready if you want the brand to feel more architectural and symbolic.</p><div class="mt-12 grid gap-5 md:grid-cols-2"><a class="direction-card" href="/blog/"><img src="/images/lp/tension-direction-editorial.png" alt="Editorial intimacy: a couple in a quiet private moment" loading="lazy" /><span><strong>Variation A — Editorial intimacy</strong><em>Human, warm, relationship-first. Best for leading with trust and emotional safety.</em><small>Current LP hero → Journal</small></span></a><a class="direction-card" href="/blog/topic/tools-guides/"><img src="/images/lp/tension-direction-tactile.png" alt="Tactile structure: abstract objects representing a private ritual" loading="lazy" /><span><strong>Variation B — Tactile structure</strong><em>Abstract, private, symbolic. Best for leading with design, rituals, and chosen power.</em><small>Alternate direction → Tools &amp; guides</small></span></a></div></div></section>
 
-    <div class="max-w-5xl mx-auto relative z-10">
-      <div class="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
-        <div>
-          <div class="flex items-center gap-3 mb-8">
-            <span class="block w-8 h-px bg-[#D4213D]"></span>
-            <span class="text-xs font-semibold tracking-[0.2em] uppercase text-[#D4213D]">Free Tool</span>
-          </div>
-          <h2 class="font-serif font-medium mb-6 text-white leading-tight" style="font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.02em;">
-            Start here: <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-[#ECECEC]">The Couples Checklist</span>
-          </h2>
-          <p class="text-lg leading-relaxed mb-10 font-light text-[#FFFFFF] max-w-md">
-            90 activities, 7 categories, 5 response options. The conversation most couples never have — structured and made easier.
-          </p>
-          <div class="flex flex-col gap-4 mb-10">
-            {['90 activities across 7 categories', 'Done together, not separately', 'Free. Yours in 90 seconds.'].map(item => (
-              <div class="flex items-center gap-4 text-[15px] font-light text-[#FFFFFF]">
-                <div class="w-1.5 h-1.5 rounded-full bg-[#D4213D]"></div>
-                {item}
-              </div>
-            ))}
-          </div>
-          <EmailCaptureForm />
-          <p class="text-xs mt-6 text-[#B8B8B8] font-light">No spam. Unsubscribe any time.</p>
-        </div>
-        <div class="hidden md:flex justify-end relative">
-          <div class="w-full max-w-[380px] aspect-[4/5] rounded-3xl relative overflow-hidden flex flex-col justify-between p-10" style="background: linear-gradient(180deg, #373744 0%, #202028 100%); border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 40px 80px rgba(0,0,0,0.55);">
-            <div class="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none"></div>
-            
-            <div class="relative z-10">
-              <p class="font-serif text-7xl font-medium mb-1 text-white">90</p>
-              <p class="text-xs tracking-[0.2em] uppercase text-[#CCCCCC]">Activities</p>
-            </div>
-            
-            <div class="w-full h-px bg-white/5 relative z-10 my-8"></div>
-            
-            <div class="relative z-10">
-              <p class="font-serif text-5xl font-medium mb-1 text-white">7</p>
-              <p class="text-xs tracking-[0.2em] uppercase text-[#CCCCCC]">Categories</p>
-            </div>
-            
-            <div class="w-full h-px bg-white/5 relative z-10 my-8"></div>
-            
-            <div class="relative z-10">
-              <p class="font-serif text-5xl font-medium mb-1 text-[#D4213D]">5</p>
-              <p class="text-xs tracking-[0.2em] uppercase text-[#CCCCCC]">Response options</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Blog teaser with Generated Images -->
-  <section class="py-24 px-6 relative" style="background: #202026; border-top: 1px solid #32323C;">
-    <div class="max-w-5xl mx-auto">
-      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-16">
-        <div>
-          <h2 class="font-serif text-3xl md:text-4xl font-medium mb-3 text-white">From the journal</h2>
-          <p class="text-lg text-[#ECECEC] font-light">Plain-language guides on power dynamics, scenes, and intentional intimacy.</p>
-        </div>
-        <a href="/blog" class="inline-flex items-center gap-2 text-sm font-semibold tracking-wide uppercase transition-colors text-[#D4213D] hover:text-white">
-          Read all entries →
-        </a>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-8">
-        <a href="/blog" class="group rounded-3xl overflow-hidden relative aspect-[16/10] block">
-          <img src="/images/tension_blog_1.png" alt="Blog entry" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-          <div class="absolute bottom-0 left-0 p-8">
-            <span class="text-xs font-semibold tracking-[0.2em] uppercase text-[#D4213D] mb-3 block">Perspective</span>
-            <h3 class="font-serif text-2xl font-medium text-white">The Psychology of the Chain</h3>
-          </div>
-        </a>
-        <a href="/blog" class="group rounded-3xl overflow-hidden relative aspect-[16/10] block">
-          <img src="/images/tension_blog_2.png" alt="Blog entry" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-          <div class="absolute bottom-0 left-0 p-8">
-            <span class="text-xs font-semibold tracking-[0.2em] uppercase text-[#D4213D] mb-3 block">Dynamics</span>
-            <h3 class="font-serif text-2xl font-medium text-white">Creating Space for Surrender</h3>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
+    <section class="bg-black px-6 py-28 text-center"><div class="mx-auto max-w-3xl"><p class="eyebrow text-[#A61E2D]">You can start without knowing the label.</p><h2 class="section-title mt-5">You only need a next conversation.</h2><a class="btn-primary mt-9" href="/free-checklist">Get the free checklist →</a></div></section>
+  </main>
 </BaseLayout>
+
+<style>
+  .lp-dark { background:#000; color:#F4F0E8; }
+  .eyebrow { font:600 10px/1 Inter,sans-serif; letter-spacing:.24em; text-transform:uppercase; }
+  .btn-primary { display:inline-flex; align-items:center; justify-content:center; background:#A61E2D; color:#F4F0E8; padding:.9rem 1.35rem; border:1px solid #A61E2D; transition:background .2s,border-color .2s,transform .2s; }
+  .btn-primary:hover { background:#C9952E; border-color:#C9952E; color:#000; transform:translateY(-2px); }
+  .btn-secondary { display:inline-flex; align-items:center; justify-content:center; border:1px solid rgba(201,149,46,.7); color:#C9952E; padding:.9rem 1.35rem; transition:background .2s,color .2s; }
+  .btn-secondary:hover { background:#C9952E; color:#000; }
+  .gold-rule { height:1px; background:linear-gradient(90deg,transparent,#C9952E,transparent); }
+  .principle-card { padding:52px 32px; text-align:center; border-right:1px solid rgba(201,149,46,.5); }
+  .principle-card:last-child { border-right:0; }
+  .gold-icon { color:#C9952E; font-size:35px; line-height:1; margin-bottom:17px; }
+  .principle-card h2 { font:600 1.7rem/1.1 Fraunces,serif; margin-bottom:7px; }
+  .principle-card em { color:#C9952E; font:italic 1rem/1.5 Fraunces,serif; }
+  .principle-card p { color:rgba(244,240,232,.75); font:1rem/1.5 Fraunces,serif; margin:11px auto 0; max-width:22ch; }
+  .section-title { color:#F4F0E8; font:600 clamp(2.4rem,5vw,4.4rem)/.98 Fraunces,serif; letter-spacing:-.035em; }
+  .how-rail { display:grid; grid-template-columns:1fr minmax(40px,.35fr) 1fr minmax(40px,.35fr) 1fr; align-items:center; gap:18px; }
+  .how-rail article { display:flex; gap:18px; align-items:start; }
+  .how-rail article>span { color:#C9952E; font:400 3.8rem/.8 Fraunces,serif; }
+  .how-rail h3 { color:#F4F0E8; font:600 1.35rem/1.1 Fraunces,serif; }
+  .how-rail p { color:rgba(244,240,232,.7); font-size:.85rem; line-height:1.55; margin-top:9px; }
+  .rail-line { height:1px; background:#C9952E; opacity:.65; }
+  .checklist-list { display:grid; gap:10px; color:rgba(244,240,232,.76); font-size:.9rem; line-height:1.5; }
+  .checklist-list li::before { content:'✓'; color:#C9952E; margin-right:10px; }
+  .guide-card,.direction-card { position:relative; overflow:hidden; border:1px solid rgba(201,149,46,.8); background:#000; }
+  .guide-card { min-height:360px; display:block; }
+  .guide-card img,.direction-card img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:brightness(.48) saturate(.55); transition:transform .4s; }
+  .guide-card:hover img,.direction-card:hover img { transform:scale(1.04); }
+  .guide-overlay { position:absolute; inset:0; background:linear-gradient(0deg,rgba(0,0,0,.95),rgba(0,0,0,.12) 80%); }
+  .direction-card { min-height:230px; display:block; }
+  .direction-card::after { content:''; position:absolute; inset:0; background:linear-gradient(0deg,rgba(0,0,0,.95),rgba(0,0,0,.12)); }
+  .direction-card>span { position:absolute; z-index:1; inset:auto 26px 24px; display:grid; gap:7px; }
+  .direction-card strong { color:#F4F0E8; font:600 1.55rem/1.1 Fraunces,serif; }
+  .direction-card em { color:#C9952E; font:italic 1rem/1.35 Fraunces,serif; }
+  .direction-card small { color:rgba(244,240,232,.7); font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; }
+  a:focus-visible,input:focus-visible,button:focus-visible { outline:2px solid #C9952E; outline-offset:3px; }
+  @media (max-width:760px) { .principle-card{border-right:0;border-bottom:1px solid rgba(201,149,46,.5)} .principle-card:last-child{border-bottom:0} .how-rail{grid-template-columns:1fr;gap:24px} .rail-line{width:1px;height:30px;margin-left:28px} }
+  @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; transition-duration:.01ms!important; animation-duration:.01ms!important; } }
+</style>
