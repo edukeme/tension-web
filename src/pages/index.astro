@@ -1,61 +1,58 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { ArrowRight, Check, Mail, ShieldCheck } from '@lucide/astro';
+import { ArrowRight, Check, Mail } from '@lucide/astro';
 
 export const prerender = true;
 
 const steps = [
-  {
-    title: 'Find the words',
-    copy: 'Talk about desire, boundaries, and curiosity without making it a big performance.',
-  },
-  {
-    title: 'Choose together',
-    copy: 'Discover what genuinely interests both of you. A maybe is allowed to stay a maybe.',
-  },
-  {
-    title: 'Try with a frame',
-    copy: 'Use agreements, role plays, and scene guides so you can focus on each other.',
-  },
+  ['Find the words', 'Name what matters.\nSpeak clearly.\nListen deeply.'],
+  ['Build the frame', 'Create rituals and agreements\nthat hold in real life.'],
+  ['Explore with care', 'Move at a pace that feels safe,\ncurious, and connected.'],
 ];
 
 const guides = [
   {
-    label: 'Start here',
-    title: 'The Couples Kink Discovery Checklist',
-    copy: 'Ninety activities and five possible answers to make the first conversation easier.',
-    href: '/free-checklist/',
-    image: '/images/lp/tension-checklist-v3.png',
-    cta: 'Get the free checklist',
-  },
-  {
-    label: 'Talk',
     title: 'The Kink Conversation Workbook',
-    copy: 'Turn “we’ve been thinking about this” into a real, shared structure.',
+    line: 'Speak clearly. Listen deeply.',
+    copy: 'Practical questions and frameworks for desire, boundaries, and repair.',
     href: '/negotiation-workbook/',
-    image: '/images/lp/tension-guide-negotiation.png',
-    cta: 'Explore the workbook',
+    image: '/images/lp/tension-guide-language-v3.png',
   },
   {
-    label: 'Play',
-    title: 'The Tension Scene Collection',
-    copy: 'Beginner, intermediate, and advanced D/s scene guides for couples ready to explore.',
-    href: '#playbooks',
-    image: '/images/lp/tension-guide-scenes.png',
-    cta: 'Explore the scene guides',
+    title: 'First Explorations',
+    line: 'A frame for your first scenes.',
+    copy: 'Seven guided D/s scenes designed for couples beginning together.',
+    href: '/7-scenes-first-explorations/',
+    image: '/images/lp/tension-guide-rituals-v3.png',
   },
-];
-
-const playbooks = [
-  ['Beginner', 'First Explorations', '/7-scenes-first-explorations/'],
-  ['Intermediate', 'The Deep Game', '/7-scenes-deep-game/'],
-  ['Advanced', 'The Edge', '/7-scenes-the-edge/'],
+  {
+    title: 'The Tension Scene Collection',
+    line: 'More trust. Better play.',
+    copy: 'Beginner, intermediate, and advanced guides for deeper erotic connection.',
+    href: '/7-scenes-deep-game/',
+    image: '/images/lp/tension-guide-intimacy-v3.png',
+  },
 ];
 
 const journal = [
-  ['Connection, not perfection', 'Why presence matters more than performance.', '/blog/bdsm-sex-integration/', '/images/lp/tension-journal-connection-v3.png'],
-  ['Three questions that change everything', 'A weekly check-in that brings you closer.', '/blog/topic/relationships/', '/images/lp/tension-journal-questions-v3.png'],
-  ['Desire grows in the details', 'Small moments. Consistent care. Lasting impact.', '/blog/bdsm-starter-kit/', '/images/lp/tension-journal-desire-v3.png'],
+  {
+    title: 'Connection, not perfection',
+    line: 'Why presence matters more than performance.',
+    href: '/blog/bdsm-sex-integration/',
+    image: '/images/lp/tension-journal-connection-v3.png',
+  },
+  {
+    title: 'Three questions that change everything',
+    line: 'A weekly check-in that brings you closer.',
+    href: '/blog/topic/relationships/',
+    image: '/images/lp/tension-journal-questions-v3.png',
+  },
+  {
+    title: 'Desire grows in the details',
+    line: 'Small moments. Consistent care. Lasting impact.',
+    href: '/blog/bdsm-starter-kit/',
+    image: '/images/lp/tension-journal-desire-v3.png',
+  },
 ];
 ---
 
@@ -63,336 +60,250 @@ const journal = [
   title="Kink-Informed Relationship Education for Couples"
   description="Articles, practical questions, role plays, and scene guides for couples exploring kink, BDSM, and power dynamics."
   canonical="/"
-  ogImage="/images/lp/tension-hero-v4.jpg"
+  ogImage="/images/lp/tension-hero-v5.png"
   hideChrome={true}
 >
-  <div class="landing">
+  <main class="landing">
     <header class="site-header">
       <div class="shell header-inner">
         <a class="wordmark" href="/" aria-label="Tension home">TENSION</a>
         <nav aria-label="Primary navigation">
-          <a href="#how-it-works">How it works</a>
-          <a href="#mrd">Mr. D</a>
-          <a href="#playbooks">Guides</a>
-          <a href="/blog/">Journal</a>
+          <a href="/about/">About</a>
+          <a href="#approach">Approach</a>
+          <a href="#checklist">Tools</a>
+          <a href="#guides">Guides</a>
+          <a href="#journal">Journal</a>
         </nav>
-        <a class="button button--small" href="/free-checklist/">Get the free checklist</a>
+        <a class="button button--header" href="/free-checklist/">Get the checklist</a>
       </div>
     </header>
 
     <section class="hero" aria-labelledby="hero-title">
-      <img src="/images/lp/tension-hero-v4.jpg" alt="An adult couple sharing a quiet, anticipatory moment in a dark apartment" fetchpriority="high" />
-      <div class="hero-shade"></div>
+      <img src="/images/lp/tension-hero-v5.png" alt="An adult couple sharing a close, intimate moment on a sofa" fetchpriority="high" />
+      <div class="hero-overlay"></div>
       <div class="shell hero-inner">
-        <div class="hero-copy">
-          <p class="eyebrow">Couples relationship education</p>
-          <h1 id="hero-title">For couples exploring<br /><em>kink, BDSM, and power dynamics.</em></h1>
-          <p class="hero-lede">Articles, practical questions, role plays and scene guides for couples who want more trust, better play, and stronger erotic connection.</p>
-          <div class="hero-actions">
-            <a class="button" href="/free-checklist/">Get the free checklist <ArrowRight size={15} /></a>
-            <a class="text-link" href="#playbooks">Explore the guides <ArrowRight size={14} /></a>
-          </div>
-          <p class="hero-trust"><ShieldCheck size={15} /> Consent-first education for adults · Not therapy · Not porn</p>
-        </div>
+        <h1 id="hero-title">For couples exploring<br /><em>kink, BDSM, and power dynamics.</em></h1>
+        <p class="hero-line">More <em>trust.</em> More <em>play.</em> More <em>erotic connection.</em></p>
+        <a class="button" href="/free-checklist/">Get the free checklist <ArrowRight size={14} /></a>
       </div>
     </section>
 
-    <section id="how-it-works" class="simple-section steps-section">
+    <section id="approach" class="approach section">
       <div class="shell">
-        <div class="section-heading">
+        <div class="intro">
           <p class="eyebrow">Our approach</p>
           <h2>Stronger connection<br /><em>is built, not left to chance.</em></h2>
+          <span class="ornament" aria-hidden="true"></span>
+          <p class="intro-copy">Tension gives couples the language, structure, and tools to explore kink with more trust, curiosity, and erotic connection. Mr. D brings a direct, experienced editorial voice to the questions most advice avoids.</p>
         </div>
-        <div class="steps-grid">
-          {steps.map((step, index) => (
-            <article>
-              <span>0{index + 1}</span>
-              <h3>{step.title}</h3>
-              <p>{step.copy}</p>
+
+        <p class="eyebrow how-label">How it works</p>
+        <div class="steps">
+          {steps.map(([title, copy], index) => (
+            <article class="step">
+              <div class="step-number"><span>0{index + 1}</span><i></i></div>
+              <h3>{title}</h3>
+              <p>{copy}</p>
             </article>
           ))}
         </div>
       </div>
     </section>
 
-    <section class="checklist-feature">
-      <div class="checklist-image"><img src="/images/lp/tension-checklist-v3.png" alt="A Tension notebook and pen beside a glass" loading="lazy" /></div>
-      <div class="checklist-copy">
+    <section id="checklist" class="checklist">
+      <div class="checklist-image">
+        <img src="/images/lp/tension-checklist-v3.png" alt="A Tension notebook and pen beside a glass" loading="lazy" />
+      </div>
+      <div class="checklist-content">
         <p class="eyebrow">Free resource</p>
-        <h2>The Couples<br /><em>Checklist.</em></h2>
-        <p>90 activities to spark better conversations and deeper connection.</p>
+        <h2>The Couples Checklist</h2>
+        <p class="gold-line">90 activities to spark better conversations and deeper connection.</p>
         <ul>
-          <li><Check size={16} /> Explore kink, sensory play, and power exchange</li>
-          <li><Check size={16} /> Move beyond yes or no</li>
-          <li><Check size={16} /> Complete it together, in real time</li>
+          <li><Check size={15} /> 10 conversation starters</li>
+          <li><Check size={15} /> Consent and comfort guide</li>
+          <li><Check size={15} /> Rituals that strengthen connection</li>
+          <li><Check size={15} /> A simple weekly check-in</li>
         </ul>
-        <a class="button" href="/free-checklist/">Get the free checklist <ArrowRight size={15} /></a>
-        <strong class="feature-number">90 <span>activities</span></strong>
-        <small>Free and delivered discreetly.</small>
-      </div>
-    </section>
-
-    <section id="mrd" class="mrd-section">
-      <div class="mrd-image"><img src="/images/lp/tension-mrd-editorial-v1.jpg" alt="An open notebook, fountain pen, ribbon, and key in a private study" loading="lazy" /></div>
-      <div class="mrd-copy">
-        <p class="eyebrow">Meet your guide</p>
-        <h2>Mr. D says the part<br /><em>most advice avoids.</em></h2>
-        <p>Direct, kink-informed, and practical. Mr. D turns questions about desire, dominance, submission, boundaries, and erotic connection into language you can use together.</p>
-        <blockquote>“You need better language for the parts of you that are already there.”</blockquote>
-        <a class="text-link" href="/blog/">Read the Tension Journal <ArrowRight size={14} /></a>
-        <small>Mr. D is an editorial coaching persona created by Tension.</small>
-      </div>
-    </section>
-
-    <section id="playbooks" class="simple-section guides-section">
-      <div class="shell">
-        <div class="section-heading center">
-          <p class="eyebrow">Guides</p>
-          <h2>Tools for the<br /><em>conversation and the scene.</em></h2>
-        </div>
-        <div class="guide-grid">
-          {guides.map((guide) => (
-            <a class="guide-card" href={guide.href}>
-              <div class="guide-image"><img src={guide.image} alt="" loading="lazy" /></div>
-              <div class="guide-copy">
-                <span>{guide.label}</span>
-                <h3>{guide.title}</h3>
-                <p>{guide.copy}</p>
-                <b>{guide.cta} <ArrowRight size={14} /></b>
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section class="playbooks-section">
-      <div class="shell">
-        <div class="playbooks-heading">
+        <div class="checklist-action">
+          <strong>90 <span>activities</span></strong>
           <div>
-            <p class="eyebrow">The Tension Scene Collection</p>
-            <h2>Start with a frame.<br /><em>Build from there.</em></h2>
+            <a class="button" href="/free-checklist/">Get the checklist <ArrowRight size={14} /></a>
+            <small>No spam. Unsubscribe anytime.</small>
           </div>
-          <p>Three levels of D/s scene guides for couples who want structure without losing the feeling.</p>
         </div>
-        <div class="playbook-list">
-          {playbooks.map(([level, title, href], index) => (
-            <a href={href}>
-              <span>0{index + 1} · {level}</span>
-              <h3>{title}</h3>
-              <ArrowRight size={17} />
-            </a>
-          ))}
-        </div>
-        <p class="scope-note">The current scene collections are written for a male Dominant/female submissive dynamic.</p>
       </div>
     </section>
 
-    <section class="standards-section">
-      <div class="shell standards-inner">
-        <div>
-          <p class="eyebrow">Our standard</p>
-          <h2>Good play needs<br /><em>good preparation.</em></h2>
-        </div>
-        <p>Consent is active. Curiosity is not pressure. Every activity carries specific risks. Tension gives you practical education for the conversation before, during, and after the scene.</p>
-      </div>
-    </section>
-
-    <section class="journal-section">
+    <section id="guides" class="catalog section">
       <div class="shell">
-        <div class="section-heading center">
-          <p class="eyebrow">Journal</p>
-          <h2>Ideas to bring<br /><em>into the room.</em></h2>
-        </div>
-        <div class="journal-grid">
-          {journal.map(([title, copy, href, image]) => (
-            <a class="journal-card" href={href}>
-              <div class="journal-image"><img src={image} alt="" loading="lazy" /></div>
-              <div class="journal-copy">
-                <h3>{title}</h3>
-                <p>{copy}</p>
-                <b>Read more <ArrowRight size={14} /></b>
-              </div>
-            </a>
+        <p class="eyebrow section-label">Guides</p>
+        <div class="card-grid">
+          {guides.map((guide) => (
+            <article class="card">
+              <a class="card-image" href={guide.href}><img src={guide.image} alt="" loading="lazy" /></a>
+              <h3><a href={guide.href}>{guide.title}</a></h3>
+              <p class="card-line">{guide.line}</p>
+              <p class="card-copy">{guide.copy}</p>
+              <a class="more" href={guide.href}>Learn more <ArrowRight size={13} /></a>
+            </article>
           ))}
         </div>
       </div>
     </section>
 
-    <section class="closing-section">
-      <div class="narrow center">
-        <p class="eyebrow">Your next move</p>
-        <h2>Start with one<br /><em>honest conversation.</em></h2>
-        <p>You do not need the perfect scene. You need a way to begin.</p>
-        <a class="button" href="/free-checklist/">Get the free checklist <ArrowRight size={15} /></a>
+    <section id="journal" class="catalog journal section">
+      <div class="shell">
+        <p class="eyebrow section-label">Journal</p>
+        <div class="card-grid">
+          {journal.map((article) => (
+            <article class="card journal-card">
+              <a class="card-image" href={article.href}><img src={article.image} alt="" loading="lazy" /></a>
+              <h3><a href={article.href}>{article.title}</a></h3>
+              <p class="card-line">{article.line}</p>
+              <a class="more" href={article.href}>Read more <ArrowRight size={13} /></a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="closing section">
+      <div class="shell">
+        <h2>You only need<br /><em>a next conversation.</em></h2>
+        <a class="button" href="/free-checklist/">Get the free checklist <ArrowRight size={14} /></a>
       </div>
     </section>
 
     <footer class="site-footer">
       <div class="shell footer-inner">
-        <div><a class="wordmark" href="/">TENSION</a><p>Practical, erotic relationship education for couples.</p></div>
-        <nav aria-label="Footer navigation"><a href="#how-it-works">How it works</a><a href="#mrd">Mr. D</a><a href="#playbooks">Guides</a><a href="/blog/">Journal</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
-        <a class="mail" href="mailto:hello@tension.app" aria-label="Email Tension"><Mail size={18} /></a>
+        <a class="wordmark" href="/">TENSION</a>
+        <nav aria-label="Footer navigation">
+          <a href="/about/">About</a><a href="#approach">Approach</a><a href="#checklist">Tools</a><a href="#guides">Guides</a><a href="#journal">Journal</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a>
+        </nav>
+        <a class="mail" href="mailto:hello@tension.app" aria-label="Email Tension"><Mail size={17} /></a>
       </div>
     </footer>
-  </div>
+  </main>
 </BaseLayout>
 
 <style>
-  :global(html) { scroll-behavior: smooth; background: #050403; }
-  :global(body) { background: #050403 !important; }
-  .landing { --black:#050403; --black-soft:#0a0807; --panel:#120d0b; --ivory:#eee5da; --muted:#b7aa9e; --faint:#82766d; --gold:#c99a45; --gold-dark:#765321; --rule:rgba(201,154,69,.42); --red:#a80f1b; color:var(--ivory); background:radial-gradient(ellipse at 50% 8%,#17100d 0,#070504 32%,#050403 70%); overflow:hidden; font-family:Inter,sans-serif; }
-  .shell { width:min(calc(100% - 48px),1180px); margin-inline:auto; }
-  .narrow { width:min(calc(100% - 48px),760px); margin-inline:auto; }
-  .center { text-align:center; }
+  :global(html) { scroll-behavior:smooth; background:#030303; }
+  :global(body) { background:#030303 !important; }
+  .landing { --black:#030303; --ivory:#eee8df; --muted:#b9afa5; --gold:#c89024; --red:#b40f1c; color:var(--ivory); background:var(--black); overflow:hidden; font-family:Inter,sans-serif; }
+  .shell { width:min(calc(100% - 56px),1180px); margin-inline:auto; }
   a { color:inherit; text-decoration:none; }
   em { color:var(--gold); font-weight:300; }
-  h2 { font:300 clamp(38px,5vw,66px)/.98 Fraunces,serif; letter-spacing:-.035em; }
-  .eyebrow { color:#d42a35; font:600 11px/1.3 Inter,sans-serif; letter-spacing:.19em; text-transform:uppercase; }
-  .button { min-height:50px; padding:0 24px; display:inline-flex; align-items:center; justify-content:center; gap:14px; color:#fff6ed; background:linear-gradient(180deg,#c21725,#94101a); border:1px solid #d12634; font:600 10px/1 Inter,sans-serif; letter-spacing:.14em; text-transform:uppercase; transition:transform .2s,filter .2s; }
-  .button:hover { transform:translateY(-2px); filter:brightness(1.12); }
-  .button--small { min-height:38px; padding-inline:18px; font-size:8px; }
-  .text-link { display:inline-flex; align-items:center; gap:10px; color:var(--gold); font:600 10px/1 Inter,sans-serif; letter-spacing:.12em; text-transform:uppercase; }
-  .text-link:hover { color:#ebbd69; }
-  .site-header { position:absolute; z-index:20; inset:0 0 auto; border-bottom:1px solid rgba(201,154,69,.32); background:linear-gradient(180deg,rgba(2,2,2,.92),rgba(2,2,2,.18)); }
-  .header-inner { height:76px; display:flex; align-items:center; }
-  .wordmark { color:var(--gold); font:400 20px/1 Fraunces,serif; letter-spacing:.28em; }
-  .site-header nav { display:flex; gap:32px; margin-left:auto; margin-right:34px; }
-  .site-header nav a,.site-footer nav a { color:#d2c8be; font:600 9px/1 Inter,sans-serif; letter-spacing:.14em; text-transform:uppercase; }
+  .eyebrow { color:#d4212d; font:700 9px/1 Inter,sans-serif; letter-spacing:.22em; text-transform:uppercase; }
+  .wordmark { color:var(--gold); font:400 18px/1 Fraunces,serif; letter-spacing:.27em; }
+  .button { min-height:48px; padding:0 25px; display:inline-flex; align-items:center; justify-content:center; gap:13px; color:#fff; background:#aa1019; border:1px solid #c51b26; font:700 9px/1 Inter,sans-serif; letter-spacing:.15em; text-transform:uppercase; transition:background .2s,transform .2s; }
+  .button:hover { background:#c01521; transform:translateY(-2px); }
+  .site-header { position:absolute; z-index:10; inset:0 0 auto; }
+  .header-inner { height:72px; display:flex; align-items:center; }
+  .site-header nav { display:flex; gap:34px; margin-left:auto; margin-right:35px; }
+  .site-header nav a,.site-footer nav a { color:#d4cec8; font:700 8px/1 Inter,sans-serif; letter-spacing:.14em; text-transform:uppercase; }
   .site-header nav a:hover,.site-footer nav a:hover { color:var(--gold); }
-  .hero { position:relative; min-height:760px; isolation:isolate; display:flex; align-items:center; text-align:center; }
-  .hero>img { position:absolute; z-index:-2; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; filter:saturate(.82) brightness(.82); }
-  .hero-shade { position:absolute; z-index:-1; inset:0; background:linear-gradient(180deg,rgba(2,2,2,.38),rgba(2,2,2,.2) 35%,rgba(2,2,2,.78) 78%,#050403 100%),linear-gradient(90deg,rgba(2,2,2,.38),rgba(2,2,2,.05) 50%,rgba(2,2,2,.42)); }
-  .hero-inner { padding-top:76px; }
-  .hero-copy { width:min(820px,90%); margin-inline:auto; }
-  .hero h1 { margin-top:24px; font:300 clamp(49px,6.3vw,86px)/.94 Fraunces,serif; letter-spacing:-.045em; text-shadow:0 4px 30px #000; }
-  .hero-lede { max-width:680px; margin:30px auto 0; color:#d3c7bc; font:300 20px/1.55 Fraunces,serif; }
-  .hero-actions { display:flex; align-items:center; justify-content:center; gap:28px; margin-top:38px; }
-  .hero-trust { margin:25px auto 0; color:#a99b90; display:flex; align-items:center; justify-content:center; gap:9px; font-size:11px; }
-  .simple-section { padding:100px 0; }
-  .steps-section { position:relative; background:#080605; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); }
-  .section-heading { position:relative; }
-  .section-heading::after { content:""; display:block; width:74px; height:1px; margin:25px auto 0; background:var(--gold); box-shadow:0 0 12px rgba(201,154,69,.3); }
-  .section-heading:not(.center)::after { margin-left:0; }
-  .section-heading h2 { margin-top:18px; }
-  .steps-grid { display:grid; grid-template-columns:repeat(3,1fr); margin-top:55px; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); }
-  .steps-grid article { position:relative; min-height:250px; padding:30px 30px 34px; border-right:1px solid rgba(201,154,69,.25); }
-  .steps-grid article:last-child { border-right:0; }
-  .steps-grid article:not(:last-child)::after { content:""; position:absolute; top:57px; right:-1px; width:50%; height:1px; background:var(--gold); transform:translateX(50%); box-shadow:0 0 8px rgba(201,154,69,.45); }
-  .steps-grid article:not(:last-child)::before { content:""; position:absolute; z-index:1; top:53px; right:-4px; width:7px; height:7px; border-radius:50%; background:var(--gold); box-shadow:0 0 0 4px #080605; }
-  .steps-grid span { color:var(--gold); font:300 28px/1 Fraunces,serif; }
-  .steps-grid h3 { margin-top:55px; font:300 27px/1.05 Fraunces,serif; }
-  .steps-grid p { margin-top:15px; color:var(--muted); font-size:13px; line-height:1.6; }
-  .checklist-feature { display:grid; grid-template-columns:1fr 1fr; background:#100b09; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); }
-  .checklist-image { min-height:540px; overflow:hidden; }
-  .checklist-image img { width:100%; height:100%; object-fit:cover; filter:saturate(.75) brightness(.78); }
-  .checklist-copy { padding:90px clamp(38px,8vw,115px); align-self:center; border-left:1px solid rgba(201,154,69,.22); }
-  .checklist-copy h2 { margin-top:18px; }
-  .checklist-copy>p:not(.eyebrow) { margin-top:25px; color:var(--muted); font:300 20px/1.55 Fraunces,serif; }
-  .checklist-copy ul { display:grid; gap:14px; margin:28px 0 34px; }
-  .checklist-copy li { display:flex; align-items:center; gap:12px; color:var(--muted); font-size:13px; }
-  .checklist-copy li :global(svg) { color:var(--gold); flex:none; }
-  .feature-number { display:flex; align-items:baseline; gap:10px; margin-top:28px; color:var(--gold); font:300 72px/.8 Fraunces,serif; }
-  .feature-number span { font:600 10px/1 Inter,sans-serif; letter-spacing:.2em; text-transform:uppercase; }
-  .checklist-copy small { display:block; margin-top:18px; color:var(--faint); font-size:10px; }
-  .mrd-section { display:grid; grid-template-columns:1fr 1fr; background:#0b0807; border-bottom:1px solid var(--rule); }
-  .mrd-image { min-height:560px; overflow:hidden; }
-  .mrd-image img { width:100%; height:100%; object-fit:cover; filter:saturate(.78) brightness(.77); }
-  .mrd-copy { padding:85px clamp(38px,8vw,115px); align-self:center; }
-  .mrd-copy h2 { margin-top:18px; }
-  .mrd-copy>p:not(.eyebrow) { margin-top:24px; color:var(--muted); font:300 18px/1.65 Fraunces,serif; }
-  .mrd-copy blockquote { margin:30px 0; padding-left:20px; border-left:1px solid var(--gold); color:#e7d9cd; font:italic 300 20px/1.45 Fraunces,serif; }
-  .mrd-copy small { display:block; margin-top:30px; color:#a99b90; font-size:12px; line-height:1.55; }
-  .guides-section { background:#070605; border-bottom:1px solid var(--rule); }
-  .guide-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:55px; }
-  .guide-card { background:#100c0a; border:1px solid rgba(201,154,69,.32); transition:transform .2s,border-color .2s; }
-  .guide-card:hover { transform:translateY(-4px); border-color:var(--gold-dark); }
-  .guide-image { height:250px; overflow:hidden; }
-  .guide-image img { width:100%; height:100%; object-fit:cover; filter:brightness(.72) saturate(.7); transition:transform .4s; }
-  .guide-card:hover img { transform:scale(1.03); }
-  .guide-copy { min-height:245px; padding:26px; display:flex; flex-direction:column; }
-  .guide-copy>span { color:#d52d39; font-size:9px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; }
-  .guide-copy h3 { margin-top:14px; font:300 27px/1.08 Fraunces,serif; }
-  .guide-copy p { margin-top:16px; color:var(--muted); font-size:13px; line-height:1.6; }
-  .guide-copy b { margin-top:auto; padding-top:24px; color:var(--gold); display:flex; align-items:center; gap:10px; font-size:9px; letter-spacing:.12em; text-transform:uppercase; }
-  .playbooks-section { padding:95px 0 105px; background:#0b0807; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); }
-  .playbooks-heading { display:flex; align-items:end; justify-content:space-between; gap:50px; }
-  .playbooks-heading>p { width:min(390px,40%); color:var(--muted); line-height:1.65; }
-  .playbook-list { display:grid; grid-template-columns:repeat(3,1fr); margin-top:50px; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); }
-  .playbook-list a { min-height:180px; padding:27px; display:grid; grid-template-columns:1fr auto; align-content:space-between; border-right:1px solid rgba(201,154,69,.25); }
-  .playbook-list a:last-child { border-right:0; }
-  .playbook-list a:hover h3,.playbook-list a:hover :global(svg) { color:var(--gold); }
-  .playbook-list span { grid-column:1/-1; color:#d52d39; font-size:9px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; }
-  .playbook-list h3 { font:300 28px/1.05 Fraunces,serif; }
-  .playbook-list :global(svg) { align-self:end; color:var(--muted); }
-  .scope-note { margin-top:18px; color:#82766d; font-size:10px; }
-  .standards-section { padding:70px 0; background:#120d0b; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); }
-  .standards-inner { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
-  .standards-inner>p { color:var(--muted); font:300 18px/1.65 Fraunces,serif; }
-  .journal-section { padding:100px 0 110px; background:#070605; border-bottom:1px solid var(--rule); }
-  .journal-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:55px; }
-  .journal-card { background:#100c0a; border:1px solid rgba(201,154,69,.32); transition:transform .2s,border-color .2s; }
-  .journal-card:hover { transform:translateY(-4px); border-color:var(--gold-dark); }
-  .journal-image { height:265px; overflow:hidden; }
-  .journal-image img { width:100%; height:100%; object-fit:cover; filter:brightness(.72) saturate(.72); transition:transform .4s; }
-  .journal-card:hover img { transform:scale(1.03); }
-  .journal-copy { min-height:190px; padding:24px; display:flex; flex-direction:column; }
-  .journal-copy h3 { font:300 27px/1.05 Fraunces,serif; }
-  .journal-copy p { margin-top:12px; color:var(--gold); font:italic 18px/1.25 Fraunces,serif; }
-  .journal-copy b { margin-top:auto; padding-top:22px; color:var(--gold); display:flex; align-items:center; gap:10px; font-size:9px; letter-spacing:.12em; text-transform:uppercase; }
-  .closing-section { padding:110px 0; background:radial-gradient(circle at 50% 30%,#23120f,#050403 62%); }
-  .closing-section h2 { margin-top:18px; }
-  .closing-section>div>p:not(.eyebrow) { margin:25px 0 32px; color:var(--muted); font:300 19px/1.5 Fraunces,serif; }
-  .site-footer { padding:45px 0; border-top:1px solid var(--rule); background:#050403; }
-  .footer-inner { display:grid; grid-template-columns:1fr auto 24px; gap:45px; align-items:center; }
-  .footer-inner>div p { margin-top:12px; color:var(--faint); font-size:10px; }
-  .site-footer nav { display:flex; flex-wrap:wrap; justify-content:center; gap:23px; }
-  .mail { color:var(--gold); }
+  .button--header { min-height:40px; padding-inline:22px; font-size:8px; }
+  .hero { position:relative; height:min(760px,100vh); min-height:640px; display:flex; align-items:flex-end; isolation:isolate; }
+  .hero>img { position:absolute; z-index:-2; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; }
+  .hero-overlay { position:absolute; z-index:-1; inset:0; background:linear-gradient(180deg,rgba(0,0,0,.08) 0%,rgba(0,0,0,.02) 35%,rgba(0,0,0,.54) 70%,#030303 100%),linear-gradient(90deg,rgba(0,0,0,.28),transparent 20%,transparent 80%,rgba(0,0,0,.28)); }
+  .hero-inner { padding-bottom:38px; text-align:center; }
+  .hero h1 { font:300 clamp(48px,5.4vw,78px)/.98 Fraunces,serif; letter-spacing:-.035em; text-shadow:0 3px 22px #000; }
+  .hero h1 em { display:inline-block; margin-top:7px; font-style:italic; }
+  .hero-line { margin:24px 0 30px; color:#d8d0c7; font:italic 300 19px/1.4 Fraunces,serif; }
+  .section { padding:70px 0; }
+  .approach { padding-top:36px; }
+  .intro { max-width:760px; margin-inline:auto; text-align:center; }
+  .intro h2,.closing h2 { margin-top:15px; font:300 clamp(38px,4.5vw,57px)/1.03 Fraunces,serif; letter-spacing:-.025em; }
+  .ornament { display:block; width:52px; height:1px; margin:24px auto; background:var(--gold); position:relative; }
+  .ornament::before,.ornament::after { content:""; position:absolute; top:-2px; width:5px; height:5px; border:1px solid var(--gold); transform:rotate(45deg); }
+  .ornament::before { left:-6px; }.ornament::after { right:-6px; }
+  .intro-copy { max-width:670px; margin-inline:auto; color:var(--muted); font:300 15px/1.65 Fraunces,serif; }
+  .how-label { margin:47px 0 22px; text-align:center; }
+  .steps { display:grid; grid-template-columns:repeat(3,1fr); }
+  .step { text-align:center; }
+  .step-number { height:36px; display:flex; align-items:center; }
+  .step-number span { width:72px; color:var(--gold); font:300 34px/1 Fraunces,serif; }
+  .step-number i { height:1px; flex:1; background:var(--gold); position:relative; opacity:.82; }
+  .step-number i::before,.step-number i::after { content:""; position:absolute; top:-2px; width:5px; height:5px; border-radius:50%; background:var(--gold); }
+  .step-number i::before { left:0; }.step-number i::after { right:0; }
+  .step:last-child .step-number i { visibility:hidden; }
+  .step h3 { margin-top:13px; font:300 22px/1.15 Fraunces,serif; }
+  .step p { margin-top:9px; color:var(--muted); white-space:pre-line; font:300 13px/1.45 Fraunces,serif; }
+  .checklist { width:min(100%,1440px); margin-inline:auto; display:grid; grid-template-columns:1fr 1fr; background:#050505; }
+  .checklist-image { min-height:560px; }
+  .checklist-image img { width:100%; height:100%; object-fit:cover; }
+  .checklist-content { padding:55px clamp(45px,6vw,94px); display:flex; flex-direction:column; justify-content:center; }
+  .checklist-content h2 { margin-top:13px; font:300 clamp(35px,3.5vw,50px)/1 Fraunces,serif; }
+  .gold-line { margin-top:11px; color:var(--gold); font:italic 300 21px/1.25 Fraunces,serif; }
+  .checklist-content ul { display:grid; gap:12px; margin:27px 0 34px; }
+  .checklist-content li { display:flex; align-items:center; gap:11px; color:#c7beb5; font:300 13px/1.3 Fraunces,serif; }
+  .checklist-content li :global(svg) { color:var(--gold); border:1px solid var(--gold); border-radius:50%; padding:2px; }
+  .checklist-action { display:flex; align-items:flex-end; gap:38px; }
+  .checklist-action strong { color:var(--gold); font:300 82px/.72 Fraunces,serif; }
+  .checklist-action strong span { display:block; margin-top:18px; font:600 10px/1 Inter,sans-serif; letter-spacing:.18em; text-transform:uppercase; }
+  .checklist-action small { display:block; margin-top:11px; color:#8e857d; font:300 10px/1 Fraunces,serif; text-align:center; }
+  .catalog { padding-top:44px; }
+  .section-label { margin-bottom:20px; text-align:center; }
+  .card-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .card-image { display:block; height:285px; overflow:hidden; background:#0b0908; }
+  .card-image img { width:100%; height:100%; object-fit:cover; filter:brightness(.78) saturate(.83); transition:transform .45s,filter .45s; }
+  .card:hover .card-image img { transform:scale(1.025); filter:brightness(.9) saturate(.9); }
+  .card h3 { margin:18px 22px 0; font:300 24px/1.08 Fraunces,serif; }
+  .card-line { margin:7px 22px 0; color:var(--gold); font:italic 300 17px/1.25 Fraunces,serif; }
+  .card-copy { min-height:60px; margin:10px 22px 0; color:var(--muted); font:300 13px/1.5 Fraunces,serif; }
+  .more { margin:22px; display:inline-flex; align-items:center; gap:11px; color:var(--gold); font:700 9px/1 Inter,sans-serif; letter-spacing:.13em; text-transform:uppercase; }
+  .journal { padding-top:16px; }
+  .journal .card-image { height:270px; }
+  .journal-card h3 { max-width:290px; }
+  .journal-card .more { margin-top:25px; }
+  .closing { padding:68px 0 74px; text-align:center; }
+  .closing .button { margin-top:28px; }
+  .site-footer { padding:30px 0; }
+  .footer-inner { min-height:64px; border-top:1px solid rgba(200,144,36,.28); display:grid; grid-template-columns:1fr auto 1fr; gap:35px; align-items:end; padding-top:28px; }
+  .site-footer .wordmark { justify-self:start; font-size:13px; }
+  .site-footer nav { display:flex; flex-wrap:wrap; justify-content:center; gap:25px; }
+  .mail { justify-self:end; color:var(--gold); }
   a:focus-visible { outline:1px solid var(--gold); outline-offset:4px; }
+
   @media (max-width:900px) {
     .site-header nav { display:none; }
     .site-header .button { margin-left:auto; }
-    .hero { min-height:730px; align-items:end; padding-bottom:70px; }
-    .hero-copy { width:min(700px,90%); }
-    .hero-shade { background:linear-gradient(90deg,rgba(2,2,2,.92),rgba(2,2,2,.35)),linear-gradient(180deg,rgba(0,0,0,.1),rgba(5,4,3,.94) 90%); }
-    .checklist-feature,.mrd-section,.standards-inner { grid-template-columns:1fr; }
-    .checklist-image,.mrd-image { min-height:430px; }
-    .guide-grid,.playbook-list,.journal-grid { grid-template-columns:1fr; }
-    .guide-card { display:grid; grid-template-columns:.8fr 1.2fr; }
-    .guide-image { height:100%; min-height:300px; }
-    .playbook-list a { border-right:0; border-bottom:1px solid rgba(201,154,69,.25); }
-    .playbook-list a:last-child { border-bottom:0; }
-    .standards-inner { gap:28px; }
+    .hero { height:720px; min-height:0; }
+    .hero>img { object-position:center; }
+    .checklist { grid-template-columns:1fr; }
+    .checklist-image { min-height:500px; }
+    .checklist-content { padding:60px max(28px,8vw); }
+    .card-grid { gap:12px; }
+    .card-image { height:230px; }
+    .journal .card-image { height:220px; }
     .footer-inner { grid-template-columns:1fr auto; }
     .site-footer nav { display:none; }
   }
+
   @media (max-width:640px) {
-    .shell,.narrow { width:min(calc(100% - 32px),1180px); }
-    .site-header .button { min-height:35px; padding-inline:12px; font-size:7px; }
-    .wordmark { font-size:17px; }
-    .hero { min-height:760px; padding-bottom:48px; }
-    .hero>img { object-position:62% center; }
-    .hero-copy { width:100%; }
-    .hero h1 { font-size:clamp(43px,13vw,62px); }
-    .hero-lede { font-size:17px; }
-    .hero-actions { align-items:flex-start; flex-direction:column; }
-    .hero-actions { align-items:center; }
-    .hero-trust { align-items:flex-start; line-height:1.5; }
-    .simple-section,.closing-section { padding:78px 0; }
-    .steps-grid { grid-template-columns:1fr; }
-    .steps-grid article { min-height:0; border-right:0; border-bottom:1px solid rgba(201,154,69,.25); }
-    .steps-grid article:not(:last-child)::after,.steps-grid article:not(:last-child)::before { display:none; }
-    .steps-grid article:last-child { border-bottom:0; }
-    .steps-grid h3 { margin-top:38px; }
-    .checklist-copy,.mrd-copy { padding:65px 24px; }
-    .feature-number { font-size:62px; }
-    .guide-card { display:block; }
-    .guide-image { height:260px; min-height:0; }
-    .playbooks-section { padding:78px 0; }
-    .playbooks-heading { align-items:flex-start; flex-direction:column; gap:24px; }
-    .playbooks-heading>p { width:100%; }
-    .standards-section { padding:65px 0; }
-    .journal-section { padding:78px 0; }
-    .footer-inner { gap:25px; }
+    .shell { width:min(calc(100% - 32px),1180px); }
+    .header-inner { height:65px; }
+    .wordmark { font-size:15px; }
+    .button--header { min-height:36px; padding-inline:13px; font-size:7px; }
+    .hero { height:680px; }
+    .hero>img { object-position:53% center; }
+    .hero-inner { padding-bottom:48px; }
+    .hero h1 { font-size:43px; }
+    .hero-line { font-size:16px; }
+    .approach { padding-top:22px; }
+    .section { padding-block:60px; }
+    .steps { grid-template-columns:1fr; gap:34px; }
+    .step-number { max-width:310px; margin-inline:auto; }
+    .step:last-child .step-number i { visibility:visible; }
+    .checklist-image { min-height:390px; }
+    .checklist-content { padding:50px 24px; }
+    .checklist-action { align-items:flex-start; flex-direction:column; gap:27px; }
+    .checklist-action strong { font-size:72px; }
+    .card-grid { grid-template-columns:1fr; gap:44px; }
+    .card-image,.journal .card-image { height:290px; }
+    .card h3,.card-line,.card-copy,.more { margin-left:6px; margin-right:6px; }
+    .card-copy { min-height:0; }
+    .journal { padding-top:5px; }
+    .closing { padding-top:45px; }
   }
 </style>
